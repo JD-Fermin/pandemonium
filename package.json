@@ -8,7 +8,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch --mode=development"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.0.2",
     "redux": "^4.1.2",
+    "redux-logger": "^3.0.6",
     "webpack": "^5.64.1",
     "webpack-cli": "^4.9.1"
   }
