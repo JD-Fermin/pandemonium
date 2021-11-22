@@ -1,11 +1,12 @@
 import React from "react";
-import { Redirect } from "react-router";
+
 
 class SessionForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {username: "", email: "", password: ""}
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.demoLogIn = this.demoLogIn.bind(this)
     }
 
     handleSubmit(e) {
@@ -17,8 +18,14 @@ class SessionForm extends React.Component {
         return e => this.setState({[field]: e.target.value})
     }
 
+    demoLogIn() {
+        this.props.submitForm(this.props.demoUser)
+    }
+
+
     render() {
-        let username = <><label htmlFor="username">Username</label>
+        let username = <><label htmlFor="username">Username</label></>
+        let demo = <><button onClick={this.demoLogIn}>Demo User</button>
         <input type="text" id="username" onChange={this.handleChange("username")} value={this.state.username}/></>;
         return (
             <div>
@@ -35,6 +42,8 @@ class SessionForm extends React.Component {
 
                     <input type="submit" value={this.props.formType} />
                 </form>
+                {this.props.formType === "Log In" ?  demo: null}
+                
             </div>
         )
     }

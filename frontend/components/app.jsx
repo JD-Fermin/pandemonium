@@ -6,15 +6,16 @@ import LoginFormContainer from "./session/login_form_container";
 import RegisterFormContainer from "./session/register_form_container";
 import Splash from './splash/splash';
 import HomeContainer from './home/home_container'
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 const App = () => (
     <div>
         <h1>Pandemonium</h1>
 
         <Switch>
-            <Route exact path="/login" component={LoginFormContainer} />
-            <Route exact path="/register" component={RegisterFormContainer} />
-            <Route exact path="/home" component={HomeContainer} />
-            <Route exact path="/" component={Splash} />
+            <AuthRoute path="/login" component={LoginFormContainer} />
+            <AuthRoute path="/register" component={RegisterFormContainer} />
+            <ProtectedRoute path="/home" component={HomeContainer} />
+            <AuthRoute exact path="/" component={Splash} />
         </Switch>
     </div>
 )

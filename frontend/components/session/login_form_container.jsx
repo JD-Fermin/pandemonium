@@ -4,7 +4,11 @@ import { login } from "../../actions/session_actions";
 import SessionForm from "./session_form";
 
 const mSTP = (state) => ({
-    formType: 'Log In'
+    formType: 'Log In',
+    demoUser: {
+        email: "iheartmechs@xyz.com",
+        password: "password"
+    }
 })
 
 const mDTP = (dispatch) => ({
