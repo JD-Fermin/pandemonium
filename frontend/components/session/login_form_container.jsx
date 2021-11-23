@@ -6,6 +6,7 @@ import SessionForm from "./session_form";
 const mSTP = (state) => ({
     formType: 'Log In',
     demoUser: {
+        username: "SuperMegaChap",
         email: "iheartmechs@xyz.com",
         password: "password"
     },
