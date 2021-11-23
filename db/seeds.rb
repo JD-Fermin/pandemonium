@@ -19,6 +19,6 @@ User.create(
 
 User.create(
     username: "UltimateSenpai",
-    email: "xyzz@sstr.com"
+    email: "xyzz@sstr.com",
     password: "password"
 )
