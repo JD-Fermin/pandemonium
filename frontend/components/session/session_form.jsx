@@ -24,6 +24,7 @@ class SessionForm extends React.Component {
 
 
     render() {
+        console.log(this.props.errors)
         let username = <><label htmlFor="username">Username</label><input type="text" id="username" onChange={this.handleChange("username")} value={this.state.username}/></>;
         let demo = <><button onClick={this.demoLogIn}>Demo User</button></>;
         let errors = <><ul>{this.props.errors.map((error, i) => <li key={i}>{error}</li>)}</ul></>;
