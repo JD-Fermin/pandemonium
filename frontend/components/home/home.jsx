@@ -4,7 +4,7 @@ class Home extends React.Component {
     render() {
         if (!this.props.currentUser) return null;
         return (
-            <div>
+            <div className="splash">
                 <h1>{this.props.currentUser.username}</h1>
                 <button onClick={this.props.logout}>Log Out</button>
             </div>

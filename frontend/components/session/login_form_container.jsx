@@ -8,7 +8,9 @@ const mSTP = (state) => ({
     demoUser: {
         email: "iheartmechs@xyz.com",
         password: "password"
-    }
+    },
+    errors: state.errors.session
+
 })
 
 const mDTP = (dispatch) => ({
