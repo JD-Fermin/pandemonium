@@ -16,4 +16,5 @@ document.addEventListener("DOMContentLoaded", () => {
   //Uncomment for dev
   ReactDOM.render(<Root store={store}/>, root);
   // ReactDOM.render(<h1>Hello World</h1>,root)
+
 });
