@@ -1,5 +1,5 @@
 class Message < ApplicationRecord
-    validates :author_id, :type_id, presence: true
+    validates :author_id, presence: true
     # validates :type, presence: true, inclusion: {in: %w(direct, channel), message: "%{value} is not a valid type"}
     validates :content, presence: true, length: {maximum: 2000}
 
