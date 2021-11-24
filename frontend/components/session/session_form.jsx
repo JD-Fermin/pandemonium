@@ -33,34 +33,37 @@ class SessionForm extends React.Component {
         let demo = <><button className="button" onClick={this.demoLogIn}>Demo User</button></>;
         let errors = <><ul>{this.props.errors.map((error, i) => <li key={i}>{error}</li>)}</ul></>;
         return (
-            <div className='sessionForm'>
-                <h2>{this.props.formType}</h2>
-                <form onSubmit={this.handleSubmit}>
-                    {this.props.formType === "Register" ?  username: null}
+            <div>
+                <h1>Pandemonium</h1>
+                <div className='sessionForm'>
+                    <h2>{this.props.formType}</h2>
+                    <form onSubmit={this.handleSubmit}>
+                        {this.props.formType === "Register" ?  username: null}
+                        
+                        <div>
+                            <label htmlFor="email">Email</label>
+                            <br />
+                            <input type="text" id="email" onChange={this.handleChange("email")} value={this.state.email}/>
+                        </div>
                     
-                    <div>
-                        <label htmlFor="email">Email</label>
-                        <br />
-                        <input type="text" id="email" onChange={this.handleChange("email")} value={this.state.email}/>
-                    </div>
-                   
-                    <div>
-                        <label htmlFor="Password">Password</label>
-                        <br />
-                        <input type="password" id="password" onChange={this.handleChange("password")} value={this.state.password}/>
-                    </div>
-                    
+                        <div>
+                            <label htmlFor="Password">Password</label>
+                            <br />
+                            <input type="password" id="password" onChange={this.handleChange("password")} value={this.state.password}/>
+                        </div>
+                        
 
-                    <input className="button" type="submit" value={this.props.formType} />
-                </form>
-                {this.props.formType === "Log In" ?  demo : null}
-                <br />
-                <br />
-                {altLink}
-                <br />
-                <button className="button back" onClick={() => (this.props.history.push('/'))}>Back</button>  
-                {this.props.errors.length === 0 ? null : errors}
-                
+                        <input className="button" type="submit" value={this.props.formType} />
+                    </form>
+                    {this.props.formType === "Log In" ?  demo : null}
+                    <br />
+                    <br />
+                    {altLink}
+                    <br />
+                    <button className="button back" onClick={() => (this.props.history.push('/'))}>Back</button>  
+                    {this.props.errors.length === 0 ? null : errors}
+                    
+                </div>
             </div>
         )
     }

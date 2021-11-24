@@ -118,4 +118,32 @@ input[type=text],input[type=password] {
     // border-radius: 4px;
     box-sizing: border-box;
     box-shadow: 2px 4px;
-  }
+}
+
+.chatbox {
+    display: flex;
+    background: green ;
+    width: 100%;
+    padding: 30px;
+}
+
+.sidebar {
+    display:flex;
+    background: rgb(131, 190, 87);
+}
+
+.home-header {
+    width: 100%;
+    background: grey;
+    overflow: auto;
+    display: flex;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+}
+
+.home-content {
+    display: flex;
+}

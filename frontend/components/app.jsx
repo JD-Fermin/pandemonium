@@ -9,7 +9,6 @@ import HomeContainer from './home/home_container'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 const App = () => (
     <div>
-        <h1>Pandemonium</h1>
 
         <Switch>
             <AuthRoute path="/login" component={LoginFormContainer} />
