@@ -3,20 +3,22 @@ import React from "react";
 class MessageForm extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {content: "", author_id: ''}
+        this.state = {content: "", author_id: this.props.currentUser.id}
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleChange = this.handleChange.bind(this)
     }
     handleSubmit(e) {
         e.preventDefault()
-        console.log('Message Sent!')
+        this.props.submitForm(this.state)
+        this.setState({content: "", author_id: this.props.currentUser.id})
     }
     handleChange(e) {
-        console.log("Updating local state...")
+        this.setState({content: e.target.value})
     }
     render () {
         return(
             <form onSubmit={this.handleSubmit}>
-                <textarea onChange={this.handleChange}></textarea>
+                <textarea onChange={this.handleChange} value={this.state.content}></textarea>
                 <input type="submit" value="Send"/>
             </form>
         )

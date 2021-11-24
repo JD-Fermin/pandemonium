@@ -1,6 +1,6 @@
 import React from "react";
 import MessagesIndexContainer from "../messages/messages_index_container";
-import MessageForm from "../messages/message_form";
+import CreateMessageContainer from "../messages/create_message_container"
 class Home extends React.Component {
     componentDidMount() {
         this.props.fetchUsers();
@@ -29,7 +29,7 @@ class Home extends React.Component {
 
                     <div className="chatbox">
                         <MessagesIndexContainer />
-                        <MessageForm />
+                        <CreateMessageContainer />
                     </div>
                 </div>
             </div>
