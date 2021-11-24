@@ -22,7 +22,7 @@ export const createMessage = (message) => (
 
 export const updateMessage = (message) => (
     $.ajax({
-        method: "POST",
+        method: "PATCH",
         url: `api/messages/${message.id}`,
         data: {message: message}
     })
