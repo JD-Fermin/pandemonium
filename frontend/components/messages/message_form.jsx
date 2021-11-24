@@ -23,6 +23,7 @@ class MessageForm extends React.Component {
             })
         } else {
             this.props.toggleEdit()
+            this.props.toggleCreate()
         }
     }
     handleChange(e) {
@@ -31,8 +32,8 @@ class MessageForm extends React.Component {
     render () {
         return(
             <form onSubmit={this.handleSubmit}>
-                <textarea onChange={this.handleChange} value={this.state.content}></textarea>
-                <input type="submit" value="Send"/>
+                <textarea onChange={this.handleChange} value={this.state.content} ></textarea>
+                <button type="submit"><img src="https://img.icons8.com/external-kmg-design-flat-kmg-design/50/000000/external-send-user-interface-kmg-design-flat-kmg-design.png"/></button>
             </form>
         )
         

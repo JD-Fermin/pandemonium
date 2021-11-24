@@ -10,6 +10,7 @@ const mSTP = (state) => ({
 const mDTP = (dispatch) => ({
     updateMessage: message => dispatch(updateMessage(message)),
     deleteMessage: id => dispatch(deleteMessage(id))
+
 })
 
 export default connect(mSTP, mDTP)(MessagesIndex)

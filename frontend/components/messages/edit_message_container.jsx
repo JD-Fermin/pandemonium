@@ -7,7 +7,7 @@ const mSTP = () => ({
 })
 
 const mDTP = (dispatch) => ({
-
+    
     submitForm: (message) => dispatch(updateMessage(message))
 })
 
