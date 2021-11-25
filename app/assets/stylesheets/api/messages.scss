@@ -6,7 +6,8 @@
     flex-direction: column;
     background: #B7E4C7 ;
     width: 100%;
-    padding: 30px;
+    justify-content: space-between;
+    
 }
 .message-form input[type=text] {
     width: 100%;
@@ -15,9 +16,14 @@
     border: 0;
     border-radius: 10px;
     padding: 10px;
+    position: sticky;
 }
 input[type=text]::placeholder {
     color: darkgreen;
 }
 
+.message-form-container {
+    position: absolute;
+    bottom: 0;
+}
 

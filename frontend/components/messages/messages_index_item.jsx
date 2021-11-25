@@ -18,9 +18,8 @@ class MessagesIndexItem extends React.Component {
         let modifyButtons = <><button onClick={()=>{this.toggleEdit(); this.props.toggleCreate();}}>Edit</button><button onClick={this.handleDelete}>Delete</button></>;
         let normalItem = <>
             <li>
-                {`${this.props.message.content}`} 
+                {`${this.props.author.username}: ${this.props.message.content}`} 
                 <br />
-                {`===> ${this.props.author.username}`}
                 {this.props.author.id === this.props.currentUser.id ? modifyButtons : null}
             </li>
         </>;
