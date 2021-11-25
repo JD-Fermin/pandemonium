@@ -8,13 +8,22 @@
     background: #95D5B2;
 }
 
-.home-header {
+.channel-bar {
     background: #95D5B2;
     // overflow: auto;
     display: flex;
     flex-direction: column;
     width: 20vw;
     justify-content: space-between;
+}
+
+.user-ops {
+    background: #40916C;
+    margin-top: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .home {

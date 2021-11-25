@@ -17,13 +17,19 @@
     border-radius: 10px;
     padding: 10px;
     position: sticky;
+    // bottom: 0;
 }
 input[type=text]::placeholder {
     color: darkgreen;
 }
 
-.message-form-container {
-    position: absolute;
-    bottom: 0;
+
+
+.chatbox nav {
+    display: flex;
+    align-items: center
 }
 
+.chatbox > nav > .channel-header {
+    display: flex;
+}

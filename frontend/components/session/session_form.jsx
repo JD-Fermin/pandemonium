@@ -36,7 +36,7 @@ class SessionForm extends React.Component {
             <div>
                 <h1>Pandemonium</h1>
                 <div className='sessionForm'>
-                    <h2>{this.props.formType}</h2>
+                    <h2 className="session-form-type">{this.props.formType}</h2>
                     <form onSubmit={this.handleSubmit}>
                         {this.props.formType === "Register" ?  username: null}
                         

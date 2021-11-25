@@ -9,14 +9,15 @@ h1 {
     text-align: center;
 }
 
-h2 {
+.greetings h2, .session-form-type {
     font-family: 'VT323', monospace;
     font-size: 60px;
     font-weight: lighter;
     letter-spacing: -0.5px;
+    text-align: center;
 }
 
-h3 {
+.greetings h3 {
     font-family: 'VT323', monospace;
     font-size: 48px;
     font-weight: normal;

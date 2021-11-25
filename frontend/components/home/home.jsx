@@ -11,10 +11,13 @@ class Home extends React.Component {
         // if (!this.props.users) return null;
         return (
             <div className="home">
-                <header className="home-header">
-                    <h3>{this.props.currentUser.username}</h3>
-                    <button className="button" onClick={this.props.logout}>Log Out</button>
-                </header>
+                <div className="channel-bar">
+                    <div className="user-ops">
+                        <h3>{this.props.currentUser.username}</h3>
+                        <button className="button" onClick={this.props.logout}>Log Out</button>
+                    </div>
+                    
+                </div>
                 <div className="home-content">
                 <Chatbox />
                     <div className="sidebar">

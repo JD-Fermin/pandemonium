@@ -14,9 +14,15 @@ class Chatbox extends React.Component {
     }
     
     render() {
-        console.log(this.state)
+
         return(
             <div className="chatbox">
+                <nav>
+                    <div className="channel-header">
+                        <span>#</span>
+                        <h2>general</h2>
+                    </div>
+                </nav>
                 <MessagesIndexContainer toggleCreate={this.toggleCreate}/>
                 { this.state.isCreate ? <CreateMessageContainer /> : null}
             </div>

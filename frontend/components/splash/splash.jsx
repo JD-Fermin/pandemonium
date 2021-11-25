@@ -6,8 +6,11 @@ class Splash extends React.Component {
             <div>
                 <h1>Pandemonium</h1>
                 <div className="splash-screen">
-                    <h2>Welcome!</h2>
-                    <h3>The Place for Cultured Peeps to Hang Out</h3>
+                    <div className="greetings">
+                        <h2>Welcome!</h2>
+                        <h3>The Place for Cultured Peeps to Hang Out</h3>
+                    </div>
+                    
                     <ul className="splash-options">
                         <li><Link to="/login">Log In!</Link></li>
                         <li><Link to="/register">Register!</Link></li>
