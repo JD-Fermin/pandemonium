@@ -1,3 +1,28 @@
 // Place all the styles related to the Api::Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.sidebar {
+    display:flex;
+    background: #95D5B2;
+}
+
+.home-header {
+    background: #95D5B2;
+    // overflow: auto;
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    justify-content: space-between;
+}
+
+.home {
+    display: flex;
+    height: 100vh;
+}
+
+.home-content {
+    display: flex;
+    width: 80vw;
+}

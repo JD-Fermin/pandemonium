@@ -30,10 +30,10 @@ class MessageForm extends React.Component {
         this.setState({content: e.target.value})
     }
     render () {
+
         return(
-            <form onSubmit={this.handleSubmit}>
-                <textarea onChange={this.handleChange} value={this.state.content} ></textarea>
-                <button type="submit"><img src="https://img.icons8.com/external-kmg-design-flat-kmg-design/50/000000/external-send-user-interface-kmg-design-flat-kmg-design.png"/></button>
+            <form className="message-form" onSubmit={this.handleSubmit}>
+                <input type="text" onChange={this.handleChange} value={this.state.content} placeholder={this.state.content === "" ? "Message here" : null}/>
             </form>
         )
         

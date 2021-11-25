@@ -12,10 +12,11 @@ class Home extends React.Component {
         return (
             <div className="home">
                 <header className="home-header">
-                    <h2>{this.props.currentUser.username}</h2>
+                    <h3>{this.props.currentUser.username}</h3>
                     <button className="button" onClick={this.props.logout}>Log Out</button>
                 </header>
                 <div className="home-content">
+                <Chatbox />
                     <div className="sidebar">
                         <ul className="users-list">
                             <h3>Users</h3>
@@ -26,8 +27,6 @@ class Home extends React.Component {
                             }
                         </ul>
                     </div>
-
-                    <Chatbox />
                 </div>
             </div>
         )
