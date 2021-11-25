@@ -23,7 +23,7 @@ class MessageForm extends React.Component {
             })
         } else {
             this.props.toggleEdit()
-            this.props.toggleCreate()
+            
         }
     }
     handleChange(e) {

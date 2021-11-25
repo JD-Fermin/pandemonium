@@ -6,12 +6,12 @@ class Chatbox extends React.Component {
     constructor(props) {
         super(props)
        this.state = {isCreate: true}
-       this.toggleCreate = this.toggleCreate.bind(this)
+    //    this.toggleCreate = this.toggleCreate.bind(this)
     }
 
-    toggleCreate() {
-        this.setState({isCreate: this.state.isCreate ? false : true})
-    }
+    // toggleCreate() {
+    //     this.setState({isCreate: this.state.isCreate ? false : true})
+    // }
     
     render() {
 
@@ -19,8 +19,8 @@ class Chatbox extends React.Component {
             <div className="chatbox">
                 
                 
-                    <MessagesIndexContainer toggleCreate={this.toggleCreate}/>
-                    { this.state.isCreate ? <CreateMessageContainer /> : <div className="null-div"></div>}
+                    <MessagesIndexContainer />
+                    <CreateMessageContainer />
     
                 
             </div>

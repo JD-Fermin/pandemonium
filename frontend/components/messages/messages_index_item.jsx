@@ -15,7 +15,7 @@ class MessagesIndexItem extends React.Component {
     }
 
     render(){
-        let modifyButtons = <><button onClick={()=>{this.toggleEdit(); this.props.toggleCreate();}}>Edit</button><button onClick={this.handleDelete}>Delete</button></>;
+        let modifyButtons = <><button onClick={()=>{this.toggleEdit();}}>Edit</button><button onClick={this.handleDelete}>Delete</button></>;
         let normalItem = <>
             <li>
                 {`${this.props.author.username}: ${this.props.message.content}`} 
@@ -26,7 +26,7 @@ class MessagesIndexItem extends React.Component {
 
     
         return (
-            this.state.editing ? <EditMessageContainer toggleCreate={this.props.toggleCreate} toggleEdit={this.toggleEdit} message={this.props.message}/> : normalItem
+            this.state.editing ? <EditMessageContainer  toggleEdit={this.toggleEdit} message={this.props.message}/> : normalItem
         )
     }
 } 
