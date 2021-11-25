@@ -19,17 +19,26 @@ class Home extends React.Component {
                     
                 </div>
                 <div className="home-content">
-                <Chatbox />
-                    <div className="sidebar">
-                        <ul className="users-list">
-                            <h3>Users</h3>
-                            {
-                                this.props.users.map((user, i) => (
-                                    <li key={i}>{user.username}</li>
-                                ))
-                            }
-                        </ul>
+                    <nav>
+                        <div className="channel-header">
+                            <span>#</span>
+                            <h2>general</h2>
+                        </div>
+                    </nav>
+                    <div className="chatbox-outer">
+                        <Chatbox />
+                        <div className="sidebar">
+                            <ul className="users-list">
+                                <h3>Users</h3>
+                                {
+                                    this.props.users.map((user, i) => (
+                                        <li key={i}>{user.username}</li>
+                                    ))
+                                }
+                            </ul>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
         )

@@ -16,20 +16,42 @@
     border: 0;
     border-radius: 10px;
     padding: 10px;
-    position: sticky;
+    // position: absolute;
     // bottom: 0;
 }
 input[type=text]::placeholder {
     color: darkgreen;
 }
 
-
-
-.chatbox nav {
-    display: flex;
-    align-items: center
+.null-div {
+    height: 40px;
 }
 
-.chatbox > nav > .channel-header {
+
+.home-content nav {
     display: flex;
+    align-items: center;
+    font-size: 16px;
+    border-bottom: 4px solid #74C69D;
+    padding: 10px;
+}
+
+.home-content > nav > .channel-header {
+    display: flex;
+    font-family: 'VT323', monospace;
+    font-size: 32px;
+  
+    
+}
+.messages-list li{
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    font-weight: lighter;
+    padding: 7px;
+}
+
+.messages-list li:hover{
+    background: #95D5B2;
+    border-radius: 4px;
+    margin: 3px;
 }

@@ -26,6 +26,13 @@
     align-items: center;
 }
 
+.user-ops h3 {
+    font-family: 'VT323', monospace;
+    font-size: 24px;
+    font-weight: normal;
+    letter-spacing: 0px;
+}
+
 .home {
     display: flex;
     height: 100vh;
@@ -34,4 +41,10 @@
 .home-content {
     display: flex;
     width: 80vw;
+    flex-direction: column;
+}
+
+.chatbox-outer {
+    display: flex;
+    height: 100%;
 }
