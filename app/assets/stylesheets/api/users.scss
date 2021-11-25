@@ -41,12 +41,15 @@
 .home-content {
     display: flex;
     width: 80vw;
+    height: 100vh;
     flex-direction: column;
+
 }
 
 .chatbox-outer {
     display: flex;
     height: 100%;
+    overflow: hidden;
 }
 
 .server-title {

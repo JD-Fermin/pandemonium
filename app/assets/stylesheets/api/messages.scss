@@ -9,6 +9,12 @@
     justify-content: space-between;
     
 }
+
+.messages-list-container {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse  ;
+}
 .message-form input[type=text] {
     width: 100%;
     height: 40px;
@@ -16,16 +22,14 @@
     border: 0;
     border-radius: 10px;
     padding: 10px;
-    // position: absolute;
+    // position: sticky;
     // bottom: 0;
 }
 input[type=text]::placeholder {
     color: darkgreen;
 }
 
-.null-div {
-    height: 40px;
-}
+
 
 
 .home-content nav {
