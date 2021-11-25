@@ -32,8 +32,9 @@ input[type=text]::placeholder {
     display: flex;
     align-items: center;
     font-size: 16px;
-    border-bottom: 4px solid #74C69D;
+    border-bottom: 2px solid #74C69D;
     padding: 10px;
+    background: #B7E4C7;
 }
 
 .home-content > nav > .channel-header {
