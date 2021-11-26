@@ -15,13 +15,13 @@ class MessagesIndexItem extends React.Component {
         this.setState({editing: this.state.editing  ? false : true})
     }
     toggleButtons(e) {
-        e.preventDefault();
+        // e.preventDefault();
         this.setState({rightClicked: this.state.rightClicked  ? false : true})
     }
     render(){
         let modifyButtons = <><button onClick={()=>{this.toggleEdit();}}>Edit</button><button onClick={this.handleDelete}>Delete</button></>;
         let normalItem = <>
-            <li onContextMenu={this.toggleButtons}>
+            <li onMouseEnter={this.toggleButtons} onMouseLeave={this.toggleButtons}>
                 {`${this.props.author.username}: ${this.props.message.content}`} 
                 <br />
                 {this.props.author.id === this.props.currentUser.id && this.state.rightClicked ? modifyButtons : null}
