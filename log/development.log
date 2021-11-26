@@ -27319,3 +27319,266 @@ Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.5ms)
 Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/" for ::1 at 2021-11-25 16:22:48 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "zoVg2rdUHN9D0b4fd2Xo_w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 310ms (Views: 309.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/users" for ::1 at 2021-11-25 16:22:49 -0800
+Started GET "/api/messages" for ::1 at 2021-11-25 16:22:49 -0800
+Processing by Api::UsersController#index as JSON
+Processing by Api::MessagesController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:1
+  Rendering api/messages/index.json.jbuilder
+  Rendered api/users/index.json.jbuilder (1.5ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/api/messages/index.json.jbuilder:1
+  Rendered api/messages/index.json.jbuilder (2.1ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/messages" for ::1 at 2021-11-25 16:22:53 -0800
+Processing by Api::MessagesController#create as JSON
+  Parameters: {"message"=>{"id"=>"", "content"=>"fwfw", "author_id"=>"1"}}
+Unpermitted parameter: :id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mMessage Create (4.6ms)[0m  [1m[32mINSERT INTO "messages" ("content", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "fwfw"], ["author_id", 1], ["created_at", "2021-11-26 00:22:53.957114"], ["updated_at", "2021-11-26 00:22:53.957114"]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+  Rendering api/messages/show.json.jbuilder
+  Rendered api/messages/show.json.jbuilder (0.6ms)
+Completed 200 OK in 42ms (Views: 3.7ms | ActiveRecord: 6.1ms)
+
+
+Started POST "/api/messages" for ::1 at 2021-11-25 16:22:54 -0800
+Processing by Api::MessagesController#create as JSON
+  Parameters: {"message"=>{"id"=>"", "content"=>"f3", "author_id"=>"1"}}
+Unpermitted parameter: :id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mMessage Create (1.1ms)[0m  [1m[32mINSERT INTO "messages" ("content", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "f3"], ["author_id", 1], ["created_at", "2021-11-26 00:22:54.729141"], ["updated_at", "2021-11-26 00:22:54.729141"]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+  Rendering api/messages/show.json.jbuilder
+  Rendered api/messages/show.json.jbuilder (0.8ms)
+Completed 200 OK in 12ms (Views: 3.6ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/api/messages" for ::1 at 2021-11-25 16:22:55 -0800
+Processing by Api::MessagesController#create as JSON
+  Parameters: {"message"=>{"id"=>"", "content"=>"f3", "author_id"=>"1"}}
+Unpermitted parameter: :id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mMessage Create (0.7ms)[0m  [1m[32mINSERT INTO "messages" ("content", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "f3"], ["author_id", 1], ["created_at", "2021-11-26 00:22:55.391801"], ["updated_at", "2021-11-26 00:22:55.391801"]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+  Rendering api/messages/show.json.jbuilder
+  Rendered api/messages/show.json.jbuilder (1.1ms)
+Completed 200 OK in 14ms (Views: 5.5ms | ActiveRecord: 2.8ms)
+
+
+Started DELETE "/api/messages/73" for ::1 at 2021-11-25 16:22:57 -0800
+Processing by Api::MessagesController#destroy as JSON
+  Parameters: {"id"=>"73"}
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:38
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/messages_controller.rb:39
+  [1m[36mMessage Destroy (0.5ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = $1[0m  [["id", 73]]
+  ↳ app/controllers/api/messages_controller.rb:39
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/messages_controller.rb:39
+  Rendering api/messages/show.json.jbuilder
+  Rendered api/messages/show.json.jbuilder (1.0ms)
+Completed 200 OK in 10ms (Views: 3.9ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/api/messages/72" for ::1 at 2021-11-25 16:22:57 -0800
+Processing by Api::MessagesController#destroy as JSON
+  Parameters: {"id"=>"72"}
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:38
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/messages_controller.rb:39
+  [1m[36mMessage Destroy (0.6ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = $1[0m  [["id", 72]]
+  ↳ app/controllers/api/messages_controller.rb:39
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/messages_controller.rb:39
+  Rendering api/messages/show.json.jbuilder
+  Rendered api/messages/show.json.jbuilder (0.9ms)
+Completed 200 OK in 9ms (Views: 3.8ms | ActiveRecord: 1.9ms)
+
+
+Started DELETE "/api/messages/71" for ::1 at 2021-11-25 16:22:59 -0800
+Processing by Api::MessagesController#destroy as JSON
+  Parameters: {"id"=>"71"}
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:38
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/messages_controller.rb:39
+  [1m[36mMessage Destroy (0.5ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = $1[0m  [["id", 71]]
+  ↳ app/controllers/api/messages_controller.rb:39
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/messages_controller.rb:39
+  Rendering api/messages/show.json.jbuilder
+  Rendered api/messages/show.json.jbuilder (1.0ms)
+Completed 200 OK in 10ms (Views: 4.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2021-11-25 17:00:09 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "zoVg2rdUHN9D0b4fd2Xo_w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/messages" for ::1 at 2021-11-25 17:00:09 -0800
+Started GET "/api/users" for ::1 at 2021-11-25 17:00:09 -0800
+Processing by Api::MessagesController#index as JSON
+  Rendering api/messages/index.json.jbuilder
+  [1m[36mMessage Load (1.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/api/messages/index.json.jbuilder:1
+  Rendered api/messages/index.json.jbuilder (3.0ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 1.3ms)
+
+
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:1
+  Rendered api/users/index.json.jbuilder (2.9ms)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2021-11-26 15:07:39 -0800
+  [1m[35m (5.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/danielfermin/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "zoVg2rdUHN9D0b4fd2Xo_w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 769ms (Views: 756.8ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/api/users" for ::1 at 2021-11-26 15:07:40 -0800
+Started GET "/api/messages" for ::1 at 2021-11-26 15:07:40 -0800
+Processing by Api::MessagesController#index as JSON
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:1
+  Rendered api/users/index.json.jbuilder (3.6ms)
+  Rendering api/messages/index.json.jbuilder
+Completed 200 OK in 6ms (Views: 2.9ms | ActiveRecord: 2.7ms)
+
+
+  [1m[36mMessage Load (1.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/api/messages/index.json.jbuilder:1
+  Rendered api/messages/index.json.jbuilder (16.9ms)
+Completed 200 OK in 24ms (Views: 5.3ms | ActiveRecord: 13.4ms)
+
+
+Started GET "/" for ::1 at 2021-11-26 15:08:08 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "zoVg2rdUHN9D0b4fd2Xo_w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 234ms (Views: 231.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/users" for ::1 at 2021-11-26 15:08:08 -0800
+Started GET "/api/messages" for ::1 at 2021-11-26 15:08:08 -0800
+Processing by Api::UsersController#index as JSON
+Processing by Api::MessagesController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  Rendering api/messages/index.json.jbuilder
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:1
+  Rendered api/users/index.json.jbuilder (2.1ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mMessage Load (1.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/api/messages/index.json.jbuilder:1
+  Rendered api/messages/index.json.jbuilder (2.7ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2021-11-26 15:13:53 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "zoVg2rdUHN9D0b4fd2Xo_w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 282ms (Views: 281.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users" for ::1 at 2021-11-26 15:13:53 -0800
+Started GET "/api/messages" for ::1 at 2021-11-26 15:13:53 -0800
+Processing by Api::MessagesController#index as JSON
+Processing by Api::UsersController#index as JSON
+  Rendering api/messages/index.json.jbuilder
+  Rendering api/users/index.json.jbuilder
+  [1m[36mMessage Load (1.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/api/messages/index.json.jbuilder:1
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered api/messages/index.json.jbuilder (5.7ms)
+  ↳ app/views/api/users/index.json.jbuilder:1
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 1.4ms)
+
+
+  Rendered api/users/index.json.jbuilder (6.3ms)
+Completed 200 OK in 10ms (Views: 5.7ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for ::1 at 2021-11-26 15:14:32 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "zoVg2rdUHN9D0b4fd2Xo_w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 272ms (Views: 270.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users" for ::1 at 2021-11-26 15:14:32 -0800
+Started GET "/api/messages" for ::1 at 2021-11-26 15:14:32 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+Processing by Api::MessagesController#index as JSON
+  Rendering api/messages/index.json.jbuilder
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:1
+  Rendered api/users/index.json.jbuilder (4.9ms)
+  [1m[36mMessage Load (0.9ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/api/messages/index.json.jbuilder:1
+  Rendered api/messages/index.json.jbuilder (2.1ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.9ms)
+
+
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 2.6ms)
+
+

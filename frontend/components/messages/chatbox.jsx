@@ -5,7 +5,7 @@ import CreateMessageContainer from "./create_message_container"
 class Chatbox extends React.Component {
     constructor(props) {
         super(props)
-       this.state = {isCreate: true}
+    //    this.state = {isCreate: true}
     //    this.toggleCreate = this.toggleCreate.bind(this)
     }
 
