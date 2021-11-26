@@ -8,6 +8,8 @@ class Home extends React.Component {
     }
     render() {
         if (!this.props.currentUser) return null;
+        if(this.props.users.length === 0) return null;
+        if(this.props.messages.length === 0) return null;
         // if (!this.props.users) return null;
         return (
             <div className="home">
