@@ -19,8 +19,8 @@ const removeMessage = (messageId) => ({
     messageId
 })
 
-export const fetchMessages = () => dispatch => (
-    APIUtil.fetchMessages().then(res => dispatch(receiveMessages(res)))
+export const fetchMessages = (channelId) => dispatch => (
+    APIUtil.fetchMessages(channelId).then(res => dispatch(receiveMessages(res)))
 )
 
 export const createMessage = (message) => dispatch => (

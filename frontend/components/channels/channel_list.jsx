@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchChannelList, setActiveChannel } from "../../actions/channel_actions";
+import { initFetchChannelList, setActiveChannel } from "../../actions/channel_actions";
 
 
 const ChannelItem = (props) => {
@@ -13,7 +13,7 @@ const ChannelItem = (props) => {
 class ChannelList extends React.Component {
     
     componentDidMount() {
-        this.props.fetchChannelList()
+        this.props.initFetchChannelList()
     }
 
     render() {
@@ -36,7 +36,7 @@ const mSTP = (state) => ({
 
 const mDTP = (dispatch) => ({
     setActiveChannel: (channel) => dispatch(setActiveChannel(channel)),
-    fetchChannelList: () => dispatch(fetchChannelList())
+    initFetchChannelList: () => dispatch(initFetchChannelList())
 })
 
 export default connect(mSTP, mDTP)(ChannelList)

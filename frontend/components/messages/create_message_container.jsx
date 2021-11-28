@@ -5,7 +5,8 @@ import MessageForm from "./message_form"
 
 const mSTP = (state) => ({
     currentUser: state.session.currentUser,
-    formType: "create"
+    formType: "create",
+    activeChannelId:  (state.entities.channels.activeChannel || {}).id
 })
 
 const mDTP = (dispatch) => ({

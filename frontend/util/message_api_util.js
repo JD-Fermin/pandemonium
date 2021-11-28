@@ -1,11 +1,11 @@
-export const fetchMessages = (channelId) => (
-    $.ajax({
+export const fetchMessages = async (channelId) => {
+    if (!channelId) return [];
+    const res = await $.ajax({
         method: "GET",
         url: `api/channels/${channelId}/messages`
-    }).then(
-        res => Object.values(res)
-    )
-)
+    })
+    return Object.values(res)
+}
 
 
 

@@ -17,5 +17,14 @@ export const setActiveChannel = (activeChannel) => (dispatch) => (
 )
 
 export const fetchChannelList = () => (dispatch) => (
-    ChannelApi.list().then(res => dispatch(_fetchChannelList(res)))
+    ChannelApi.list().then(channelList => dispatch(_fetchChannelList(channelList)))
+)
+
+export const initFetchChannelList = () => dispatch => (
+    ChannelApi.list().then(channelList => {
+        dispatch(_fetchChannelList(channelList))
+        if (channelList && channelList.length) {
+            dispatch(_setActiveChannel(channelList[0]))
+        }
+    })
 )

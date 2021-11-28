@@ -8,14 +8,19 @@ class MessageForm extends React.Component {
             id: message ? message.id : null,
             content: this.props.formType === "edit" ? message.content : "",
             author_id: message ? message.authorId : currentUser.id,
-            channel_id: 1
+            // channel_id: this.props.
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
     }
     handleSubmit(e) {
         e.preventDefault()
-        this.props.submitForm(this.state)
+        this.props.submitForm(
+            {
+                ...this.state,
+                channel_id: this.props.message ? this.props.message.channelId : this.props.activeChannelId
+            }
+        )
         // App.cable.subscriptions.subscriptions[0].speak(this.st
         // App.cable.subscriptions.subscriptions[0].received()
         // this.props.submitForm(this.state)

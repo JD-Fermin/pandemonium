@@ -5,13 +5,14 @@ import { fetchMessages } from "../../actions/message_actions"
 const mSTP = (state) => ({
     users: state.entities.users,
     messages: Object.values(state.entities.messages),
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    activeChannelId:  (state.entities.channels.activeChannel || {}).id
 })
 
 const mDTP = (dispatch) => ({
     updateMessage: message => dispatch(updateMessage(message)),
-    deleteMessage: id => dispatch(deleteMessage(id)),
-    fetchMessages: () => dispatch(fetchMessages()),
+    deleteMessage: messageId => dispatch(deleteMessage(messageId)),
+    fetchMessages: (channelId) => dispatch(fetchMessages(channelId)),
     
 
 })

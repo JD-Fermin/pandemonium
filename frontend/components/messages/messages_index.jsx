@@ -6,21 +6,46 @@ import MessagesIndexItem from './messages_index_item'
 class MessagesIndex extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            subscription: null
+        }
+        this.subscribe = this.subscribe.bind(this)
+        this.unsubscribe = this.unsubscribe.bind(this)
+
     }
-    componentDidMount() {
-        this.props.fetchMessages();
-        App.cable.subscriptions.create(
-            {channel: "ChatChannel", id: 1},
+
+    subscribe() {
+        const { activeChannelId, fetchMessages } = this.props;
+        fetchMessages(activeChannelId);
+        const subscription = App.cable.subscriptions.create(
+            {
+                channel: "ChatChannel",
+                id: activeChannelId
+            },
             {
                 received: (data) => {
-                    // console.log(data)
-                    this.props.fetchMessages()
-                    // this.props.fetchMessage(data.id)
-
-                    
+                    fetchMessages(activeChannelId) 
                 }
             }
         )
+
+        this.setState({ subscription })
+    }
+
+    unsubscribe(subscribe) {
+        if (this.state.subscription) {
+            this.state.subscription.unsubscribe()
+            this.setState({ subscription: null }, subscribe)
+        }
+    }
+    componentDidMount() {
+        this.subscribe();
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.activeChannelId !== prevProps.activeChannelId) {
+            this.unsubscribe(this.subscribe);
+        }
         
     }
     
