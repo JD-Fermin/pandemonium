@@ -4,12 +4,12 @@ import Chatbox from "../messages/chatbox";
 class Home extends React.Component {
     componentDidMount() {
         this.props.fetchUsers();
-        this.props.fetchMessages();
+        
     }
     render() {
         if (!this.props.currentUser) return null;
         if(this.props.users.length === 0) return null;
-        if(this.props.messages.length === 0) return null;
+        // if(this.props.messages.length === 0) return null;
         // if (!this.props.users) return null;
         return (
             <div className="home">

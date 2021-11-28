@@ -1,6 +1,26 @@
 import React from 'react'
 import MessagesIndexItem from './messages_index_item'
 class MessagesIndex extends React.Component {
+    componentDidMount() {
+        this.props.fetchMessages();
+        App.cable.subscriptions.create(
+            {channel: "ChatChannel"},
+            {
+                received: function(data) {
+                    console.log('wtf')
+                    this.props.messages.push(data)
+                
+                }, 
+
+                speak: function(data){
+                    return this.perform("speak", data)
+                }
+            }
+        )
+    
+    }
+
+    
    
     render() {
        
