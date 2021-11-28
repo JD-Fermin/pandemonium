@@ -7,7 +7,8 @@ class MessageForm extends React.Component {
         this.state = {
             id: message ? message.id : null,
             content: this.props.formType === "edit" ? message.content : "",
-            author_id: message ? message.authorId : currentUser.id
+            author_id: message ? message.authorId : currentUser.id,
+            channel_id: 1
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)

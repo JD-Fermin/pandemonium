@@ -26,9 +26,13 @@ class Api::MessagesController < ApplicationController
     end
 
     def create
+        @channel = Channel.find_by(id: message_params[:channel_id])
+        if @channel.nil?
+            render json: ["Channel does not exist"], status: 400
+        end
         @message = Message.new(message_params)
         if @message.save
-            ActionCable.server.broadcast('chat_channel', Api::MessagesController.render(:show, locals: {message: @message}))
+            ChatChannel.broadcast_to(@channel, Api::MessagesController.render(:show, locals: {message: @message}))
             # render :show, locals: {message: @message}
         else
             render @message.errors.full_messages, status: 422
@@ -42,7 +46,7 @@ class Api::MessagesController < ApplicationController
     end
     private
     def message_params
-        params.require(:message).permit(:content, :author_id)
+        params.require(:message).permit(:content, :author_id, :channel_id)
     end
 
     def update_params

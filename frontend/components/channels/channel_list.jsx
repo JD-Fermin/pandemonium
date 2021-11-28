@@ -13,14 +13,10 @@ class ChannelList extends React.Component {
     }
 
     componentDidMount() {
-        ChannelApi.create({name: "general"}).then(() => {
-            ChannelApi.list().then(res => {
-                console.log('channels: ', res)
-                this.setState({channelList: Object.values(res)})
-            })
+        ChannelApi.list().then(res => {
+            console.log('channels: ', res)
+            this.setState({channelList: Object.values(res)})
         })
-
-        
     }
 
     render() {
