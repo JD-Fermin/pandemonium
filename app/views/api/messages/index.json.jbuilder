@@ -1,5 +1,5 @@
 @messages.each do |message|
     json.set! message.id do
-        json.extract! message, :id, :content, :author_id
+        json.extract! message, :id, :content, :author_id, :channel_id
     end
 end
