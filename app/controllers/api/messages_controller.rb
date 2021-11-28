@@ -28,7 +28,8 @@ class Api::MessagesController < ApplicationController
     def create
         @message = Message.new(message_params)
         if @message.save
-            render :show
+            ActionCable.server.broadcast('chat_channel', Api::MessagesController.render(:show, locals: {message: @message}))
+            render :show, locals: {message: @message}
         else
             render @message.errors.full_messages, status: 422
         end

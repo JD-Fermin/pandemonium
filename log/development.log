@@ -36240,3 +36240,1284 @@ Completed 200 OK in 14ms (Views: 6.8ms | ActiveRecord: 2.5ms)
 Completed 200 OK in 11ms (Views: 7.6ms | ActiveRecord: 2.3ms)
 
 
+Started GET "/" for ::1 at 2021-11-28 00:56:27 -0800
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/danielfermin/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "dXDPE79dpcGeeGjr6QPx0w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 572ms (Views: 558.0ms | ActiveRecord: 14.4ms)
+
+
+Started GET "/api/users" for ::1 at 2021-11-28 00:56:28 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (10.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:1
+  Rendered api/users/index.json.jbuilder (12.4ms)
+Completed 200 OK in 15ms (Views: 3.8ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/api/messages" for ::1 at 2021-11-28 00:56:28 -0800
+Started GET "/cable" for ::1 at 2021-11-28 00:56:28 -0800
+Processing by Api::MessagesController#index as JSON
+  Rendering api/messages/index.json.jbuilder
+  [1m[36mMessage Load (1.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/api/messages/index.json.jbuilder:1
+  Rendered api/messages/index.json.jbuilder (15.9ms)
+Completed 200 OK in 26ms (Views: 7.6ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-28 00:56:28 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "dXDPE79dpcGeeGjr6QPx0w"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11
+Registered connection (Z2lkOi8vcGFuZGVtb25pdW0vVXNlci8x)
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+Started GET "/cable" for ::1 at 2021-11-28 00:56:33 -0800
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-28 00:56:33 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (8.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11
+Registered connection (Z2lkOi8vcGFuZGVtb25pdW0vVXNlci8y)
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+Started GET "/" for ::1 at 2021-11-28 00:56:35 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 40ms (Views: 39.6ms | ActiveRecord: 0.5ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2021-11-28 00:56:35 -0800
+ChatChannel stopped streaming from chat_channel
+Started GET "/api/users" for ::1 at 2021-11-28 00:56:35 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:1
+  Rendered api/users/index.json.jbuilder (1.3ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cable" for ::1 at 2021-11-28 00:56:36 -0800
+Started GET "/api/messages" for ::1 at 2021-11-28 00:56:36 -0800
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-28 00:56:36 -0800
+Processing by Api::MessagesController#index as JSON
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  Rendering api/messages/index.json.jbuilder
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11
+Registered connection (Z2lkOi8vcGFuZGVtb25pdW0vVXNlci8y)
+  [1m[36mMessage Load (1.8ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/api/messages/index.json.jbuilder:1
+  Rendered api/messages/index.json.jbuilder (4.5ms)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 1.8ms)
+
+
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+ChatChannel#speak({"id"=>nil, "content"=>"test message", "author_id"=>2})
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/chat_channel.rb:7
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/channels/chat_channel.rb:7
+  [1m[36mMessage Create (1.3ms)[0m  [1m[32mINSERT INTO "messages" ("content", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "test message"], ["author_id", 2], ["created_at", "2021-11-28 08:56:43.904622"], ["updated_at", "2021-11-28 08:56:43.904622"]]
+  ↳ app/channels/chat_channel.rb:7
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/channels/chat_channel.rb:7
+[ActionCable] Broadcasting to chat_channel: {:id=>136, :content=>"test message", :author_id=>2}
+ChatChannel transmitting {"id"=>136, "content"=>"test message", "author_id"=>2} (via streamed from chat_channel)
+ChatChannel transmitting {"id"=>136, "content"=>"test message", "author_id"=>2} (via streamed from chat_channel)
+Started GET "/api/messages/136" for ::1 at 2021-11-28 00:56:43 -0800
+Started GET "/api/messages/136" for ::1 at 2021-11-28 00:56:43 -0800
+Processing by Api::MessagesController#show as JSON
+Processing by Api::MessagesController#show as JSON
+  Parameters: {"id"=>"136"}
+  Parameters: {"id"=>"136"}
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 136], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:8
+  [1m[36mMessage Load (1.8ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 136], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:8
+  Rendering api/messages/show.json.jbuilder
+  Rendering api/messages/show.json.jbuilder
+  Rendered api/messages/show.json.jbuilder (0.7ms)
+  Rendered api/messages/show.json.jbuilder (0.1ms)
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 0.6ms)
+
+
+Completed 200 OK in 8ms (Views: 4.7ms | ActiveRecord: 1.8ms)
+
+
+ChatChannel#speak({"id"=>128, "content"=>"hello x2", "author_id"=>1})
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/chat_channel.rb:7
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/chat_channel.rb:7
+  [1m[36mMessage Create (1.2ms)[0m  [1m[32mINSERT INTO "messages" ("content", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "hello x2"], ["author_id", 1], ["created_at", "2021-11-28 08:59:29.050594"], ["updated_at", "2021-11-28 08:59:29.050594"]]
+  ↳ app/channels/chat_channel.rb:7
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/channels/chat_channel.rb:7
+[ActionCable] Broadcasting to chat_channel: {:id=>137, :content=>"hello x2", :author_id=>1}
+ChatChannel transmitting {"id"=>137, "content"=>"hello x2", "author_id"=>1} (via streamed from chat_channel)
+ChatChannel transmitting {"id"=>137, "content"=>"hello x2", "author_id"=>1} (via streamed from chat_channel)
+Started GET "/api/messages/137" for ::1 at 2021-11-28 00:59:29 -0800
+Processing by Api::MessagesController#show as JSON
+  Parameters: {"id"=>"137"}
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 137], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:8
+  Rendering api/messages/show.json.jbuilder
+  Rendered api/messages/show.json.jbuilder (1.3ms)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/messages/137" for ::1 at 2021-11-28 00:59:29 -0800
+Processing by Api::MessagesController#show as JSON
+  Parameters: {"id"=>"137"}
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 137], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:8
+  Rendering api/messages/show.json.jbuilder
+  Rendered api/messages/show.json.jbuilder (0.6ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-11-28 01:29:58 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 308ms (Views: 271.5ms | ActiveRecord: 36.4ms)
+
+
+Started GET "/api/users" for ::1 at 2021-11-28 01:29:59 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:1
+  Rendered api/users/index.json.jbuilder (1.4ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cable" for ::1 at 2021-11-28 01:29:59 -0800
+Started GET "/api/messages" for ::1 at 2021-11-28 01:29:59 -0800
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-28 01:29:59 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11
+Registered connection (Z2lkOi8vcGFuZGVtb25pdW0vVXNlci8y)
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+Processing by Api::MessagesController#index as JSON
+  Rendering api/messages/index.json.jbuilder
+  [1m[36mMessage Load (1.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/api/messages/index.json.jbuilder:1
+  Rendered api/messages/index.json.jbuilder (19.0ms)
+Completed 200 OK in 22ms (Views: 6.3ms | ActiveRecord: 13.9ms)
+
+
+Started POST "/api/messages" for ::1 at 2021-11-28 01:30:03 -0800
+Processing by Api::MessagesController#create as JSON
+  Parameters: {"message"=>{"id"=>"", "content"=>"hello x3", "author_id"=>"2"}}
+Unpermitted parameter: :id
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mMessage Create (1.5ms)[0m  [1m[32mINSERT INTO "messages" ("content", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "hello x3"], ["author_id", 2], ["created_at", "2021-11-28 09:30:03.966369"], ["updated_at", "2021-11-28 09:30:03.966369"]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+  Rendering api/messages/show.json.jbuilder
+  Rendered api/messages/show.json.jbuilder (11.5ms)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 5.5ms)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass:
+  app/views/api/messages/show.json.jbuilder:1:in `_app_views_api_messages_show_json_jbuilder___3393890215013645042_19820'
+  app/controllers/api/messages_controller.rb:31:in `create'
+
+Started GET "/cable" for ::1 at 2021-11-28 01:30:05 -0800
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-28 01:30:05 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "dXDPE79dpcGeeGjr6QPx0w"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11
+Registered connection (Z2lkOi8vcGFuZGVtb25pdW0vVXNlci8x)
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+Started GET "/" for ::1 at 2021-11-28 01:32:01 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 41ms (Views: 29.5ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/api/users" for ::1 at 2021-11-28 01:32:01 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:1
+  Rendered api/users/index.json.jbuilder (1.5ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/messages" for ::1 at 2021-11-28 01:32:01 -0800
+Started GET "/cable" for ::1 at 2021-11-28 01:32:01 -0800
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-28 01:32:01 -0800
+Processing by Api::MessagesController#index as JSON
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11
+Registered connection (Z2lkOi8vcGFuZGVtb25pdW0vVXNlci8y)
+  Rendering api/messages/index.json.jbuilder
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+  [1m[36mMessage Load (4.7ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/api/messages/index.json.jbuilder:1
+  Rendered api/messages/index.json.jbuilder (18.4ms)
+Completed 200 OK in 26ms (Views: 9.6ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/cable" for ::1 at 2021-11-28 01:32:09 -0800
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-28 01:32:09 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "dXDPE79dpcGeeGjr6QPx0w"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11
+Registered connection (Z2lkOi8vcGFuZGVtb25pdW0vVXNlci8x)
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+Started POST "/api/messages" for ::1 at 2021-11-28 01:32:13 -0800
+Processing by Api::MessagesController#create as JSON
+  Parameters: {"message"=>{"id"=>"", "content"=>"wrwrw", "author_id"=>"2"}}
+Unpermitted parameter: :id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mMessage Create (1.0ms)[0m  [1m[32mINSERT INTO "messages" ("content", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "wrwrw"], ["author_id", 2], ["created_at", "2021-11-28 09:32:14.009501"], ["updated_at", "2021-11-28 09:32:14.009501"]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+[ActionCable] Broadcasting to chat_channel: "tree"
+ChatChannel transmitting "tree" (via streamed from chat_channel)
+ChatChannel transmitting "tree" (via streamed from chat_channel)
+Started GET "/api/messages/undefined" for ::1 at 2021-11-28 01:32:14 -0800
+Processing by Api::MessagesController#show as JSON
+  Parameters: {"id"=>"undefined"}
+Started GET "/api/messages/undefined" for ::1 at 2021-11-28 01:32:14 -0800
+  [1m[36mMessage Load (2.2ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:8
+Completed 404 Not Found in 7ms (Views: 0.3ms | ActiveRecord: 2.2ms)
+
+
+Processing by Api::MessagesController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mMessage Load (1.2ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:8
+Completed 404 Not Found in 4ms (Views: 0.2ms | ActiveRecord: 1.5ms)
+
+
+No template found for Api::MessagesController#create, rendering head :no_content
+Completed 204 No Content in 66ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/" for ::1 at 2021-11-28 01:32:46 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 57ms (Views: 36.1ms | ActiveRecord: 20.5ms)
+
+
+Started GET "/api/users" for ::1 at 2021-11-28 01:32:47 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:1
+  Rendered api/users/index.json.jbuilder (2.0ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/messages" for ::1 at 2021-11-28 01:32:47 -0800
+Started GET "/cable" for ::1 at 2021-11-28 01:32:47 -0800
+Processing by Api::MessagesController#index as JSON
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-28 01:32:47 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  Rendering api/messages/index.json.jbuilder
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11
+Registered connection (Z2lkOi8vcGFuZGVtb25pdW0vVXNlci8y)
+  [1m[36mMessage Load (1.7ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/api/messages/index.json.jbuilder:1
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+  Rendered api/messages/index.json.jbuilder (25.7ms)
+Completed 200 OK in 37ms (Views: 9.1ms | ActiveRecord: 20.2ms)
+
+
+Started POST "/api/messages" for ::1 at 2021-11-28 01:32:54 -0800
+Processing by Api::MessagesController#create as JSON
+  Parameters: {"message"=>{"id"=>"", "content"=>"fwfwfw", "author_id"=>"2"}}
+Unpermitted parameter: :id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mMessage Create (1.3ms)[0m  [1m[32mINSERT INTO "messages" ("content", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "fwfwfw"], ["author_id", 2], ["created_at", "2021-11-28 09:32:54.075340"], ["updated_at", "2021-11-28 09:32:54.075340"]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+[ActionCable] Broadcasting to chat_channel: "tree"
+ChatChannel transmitting "tree" (via streamed from chat_channel)
+  Rendering api/messages/show.json.jbuilder
+  Rendered api/messages/show.json.jbuilder (1.3ms)
+Completed 200 OK in 20ms (Views: 7.0ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/api/messages/undefined" for ::1 at 2021-11-28 01:32:54 -0800
+Processing by Api::MessagesController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:8
+Completed 404 Not Found in 2ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cable" for ::1 at 2021-11-28 01:32:55 -0800
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-28 01:32:55 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "dXDPE79dpcGeeGjr6QPx0w"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11
+Registered connection (Z2lkOi8vcGFuZGVtb25pdW0vVXNlci8x)
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+Started GET "/" for ::1 at 2021-11-28 01:33:05 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "dXDPE79dpcGeeGjr6QPx0w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 36ms (Views: 34.8ms | ActiveRecord: 0.6ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2021-11-28 01:33:05 -0800
+ChatChannel stopped streaming from chat_channel
+Started GET "/api/users" for ::1 at 2021-11-28 01:33:05 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:1
+  Rendered api/users/index.json.jbuilder (1.3ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/messages" for ::1 at 2021-11-28 01:33:05 -0800
+Started GET "/cable" for ::1 at 2021-11-28 01:33:05 -0800
+Processing by Api::MessagesController#index as JSON
+  Rendering api/messages/index.json.jbuilder
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-28 01:33:05 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/api/messages/index.json.jbuilder:1
+  Rendered api/messages/index.json.jbuilder (8.3ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "dXDPE79dpcGeeGjr6QPx0w"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11
+Registered connection (Z2lkOi8vcGFuZGVtb25pdW0vVXNlci8x)
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+Started GET "/" for ::1 at 2021-11-28 01:37:48 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "dXDPE79dpcGeeGjr6QPx0w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 33ms (Views: 32.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users" for ::1 at 2021-11-28 01:37:48 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:1
+  Rendered api/users/index.json.jbuilder (1.6ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/messages" for ::1 at 2021-11-28 01:37:48 -0800
+Processing by Api::MessagesController#index as JSON
+Started GET "/cable" for ::1 at 2021-11-28 01:37:48 -0800
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-28 01:37:48 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  Rendering api/messages/index.json.jbuilder
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "dXDPE79dpcGeeGjr6QPx0w"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11
+Registered connection (Z2lkOi8vcGFuZGVtb25pdW0vVXNlci8x)
+  [1m[36mMessage Load (0.9ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/api/messages/index.json.jbuilder:1
+  Rendered api/messages/index.json.jbuilder (6.5ms)
+Completed 200 OK in 13ms (Views: 8.5ms | ActiveRecord: 0.9ms)
+
+
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+Started POST "/api/messages" for ::1 at 2021-11-28 01:37:51 -0800
+Processing by Api::MessagesController#create as JSON
+  Parameters: {"message"=>{"id"=>"", "content"=>"qddqd", "author_id"=>"1"}}
+Unpermitted parameter: :id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mMessage Create (0.7ms)[0m  [1m[32mINSERT INTO "messages" ("content", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "qddqd"], ["author_id", 1], ["created_at", "2021-11-28 09:37:51.787670"], ["updated_at", "2021-11-28 09:37:51.787670"]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+  Rendering api/messages/show.json.jbuilder
+  Rendered api/messages/show.json.jbuilder (9.5ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 2.2ms)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass:
+  app/views/api/messages/show.json.jbuilder:1:in `_app_views_api_messages_show_json_jbuilder___3393890215013645042_29680'
+  app/controllers/api/messages_controller.rb:31:in `create'
+
+Started GET "/cable" for ::1 at 2021-11-28 01:37:58 -0800
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-28 01:37:58 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11
+Registered connection (Z2lkOi8vcGFuZGVtb25pdW0vVXNlci8y)
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+Started GET "/" for ::1 at 2021-11-28 01:44:11 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 60ms (Views: 39.4ms | ActiveRecord: 20.3ms)
+
+
+Started GET "/api/users" for ::1 at 2021-11-28 01:44:11 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:1
+  Rendered api/users/index.json.jbuilder (2.8ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/messages" for ::1 at 2021-11-28 01:44:11 -0800
+Started GET "/cable" for ::1 at 2021-11-28 01:44:11 -0800
+Processing by Api::MessagesController#index as JSON
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-28 01:44:11 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11
+Registered connection (Z2lkOi8vcGFuZGVtb25pdW0vVXNlci8y)
+  Rendering api/messages/index.json.jbuilder
+  [1m[36mMessage Load (4.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/api/messages/index.json.jbuilder:1
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+  Rendered api/messages/index.json.jbuilder (36.7ms)
+Completed 200 OK in 45ms (Views: 11.8ms | ActiveRecord: 28.2ms)
+
+
+Started POST "/api/messages" for ::1 at 2021-11-28 01:44:15 -0800
+Processing by Api::MessagesController#create as JSON
+  Parameters: {"message"=>{"id"=>"", "content"=>"pleaswe", "author_id"=>"2"}}
+Unpermitted parameter: :id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mMessage Create (1.6ms)[0m  [1m[32mINSERT INTO "messages" ("content", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "pleaswe"], ["author_id", 2], ["created_at", "2021-11-28 09:44:15.573234"], ["updated_at", "2021-11-28 09:44:15.573234"]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+  Rendering api/messages/show.json.jbuilder
+  Rendered api/messages/show.json.jbuilder (11.0ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 4.9ms)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass:
+  app/views/api/messages/show.json.jbuilder:1:in `_app_views_api_messages_show_json_jbuilder___3393890215013645042_32900'
+  app/controllers/api/messages_controller.rb:31:in `create'
+
+Started GET "/cable" for ::1 at 2021-11-28 01:44:20 -0800
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-28 01:44:20 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "dXDPE79dpcGeeGjr6QPx0w"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11
+Registered connection (Z2lkOi8vcGFuZGVtb25pdW0vVXNlci8x)
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+Started GET "/" for ::1 at 2021-11-28 01:45:54 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 51ms (Views: 49.7ms | ActiveRecord: 1.1ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2021-11-28 01:45:54 -0800
+ChatChannel stopped streaming from chat_channel
+Started GET "/api/users" for ::1 at 2021-11-28 01:45:54 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:1
+  Rendered api/users/index.json.jbuilder (3.1ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/cable" for ::1 at 2021-11-28 01:45:54 -0800
+Started GET "/api/messages" for ::1 at 2021-11-28 01:45:54 -0800
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-28 01:45:54 -0800
+Processing by Api::MessagesController#index as JSON
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  Rendering api/messages/index.json.jbuilder
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11
+Registered connection (Z2lkOi8vcGFuZGVtb25pdW0vVXNlci8y)
+  [1m[36mMessage Load (1.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/api/messages/index.json.jbuilder:1
+  Rendered api/messages/index.json.jbuilder (10.9ms)
+Completed 200 OK in 19ms (Views: 16.8ms | ActiveRecord: 1.5ms)
+
+
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+Started DELETE "/api/messages/142" for ::1 at 2021-11-28 01:45:56 -0800
+Processing by Api::MessagesController#destroy as JSON
+  Parameters: {"id"=>"142"}
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 142], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:39
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/messages_controller.rb:40
+  [1m[36mMessage Destroy (0.6ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = $1[0m  [["id", 142]]
+  ↳ app/controllers/api/messages_controller.rb:40
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/messages_controller.rb:40
+  Rendering api/messages/show.json.jbuilder
+  Rendered api/messages/show.json.jbuilder (250.6ms)
+Completed 500 Internal Server Error in 264ms (ActiveRecord: 3.0ms)
+
+
+
+NameError - undefined local variable or method `message' for #<#<Class:0x00007feece207410>:0x00007feecd0551e0>
+Did you mean?  @message:
+  app/views/api/messages/show.json.jbuilder:1:in `_app_views_api_messages_show_json_jbuilder___3393890215013645042_33240'
+  app/controllers/api/messages_controller.rb:41:in `destroy'
+
+Started GET "/" for ::1 at 2021-11-28 01:46:01 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 49ms (Views: 48.4ms | ActiveRecord: 0.9ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2021-11-28 01:46:01 -0800
+ChatChannel stopped streaming from chat_channel
+Started GET "/api/users" for ::1 at 2021-11-28 01:46:01 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:1
+  Rendered api/users/index.json.jbuilder (5.8ms)
+Completed 200 OK in 9ms (Views: 5.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/api/messages" for ::1 at 2021-11-28 01:46:01 -0800
+Started GET "/cable" for ::1 at 2021-11-28 01:46:01 -0800
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-28 01:46:01 -0800
+Processing by Api::MessagesController#index as JSON
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  Rendering api/messages/index.json.jbuilder
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11
+Registered connection (Z2lkOi8vcGFuZGVtb25pdW0vVXNlci8y)
+  [1m[36mMessage Load (0.8ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/api/messages/index.json.jbuilder:1
+  Rendered api/messages/index.json.jbuilder (12.3ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.8ms)
+
+
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+Started POST "/api/messages" for ::1 at 2021-11-28 01:46:06 -0800
+Processing by Api::MessagesController#create as JSON
+  Parameters: {"message"=>{"id"=>"", "content"=>"how", "author_id"=>"2"}}
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mMessage Create (0.7ms)[0m  [1m[32mINSERT INTO "messages" ("content", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "how"], ["author_id", 2], ["created_at", "2021-11-28 09:46:06.259407"], ["updated_at", "2021-11-28 09:46:06.259407"]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+  Rendering api/messages/show.json.jbuilder
+  Rendered api/messages/show.json.jbuilder (1.0ms)
+[ActionCable] Broadcasting to chat_channel: "{\"id\":143,\"content\":\"how\",\"authorId\":2}"
+ChatChannel transmitting "{\"id\":143,\"content\":\"how\",\"authorId\":2}" (via streamed from chat_channel)
+ChatChannel transmitting "{\"id\":143,\"content\":\"how\",\"authorId\":2}" (via streamed from chat_channel)
+Started GET "/api/messages/undefined" for ::1 at 2021-11-28 01:46:06 -0800
+Processing by Api::MessagesController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mMessage Load (1.4ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Started GET "/api/messages/undefined" for ::1 at 2021-11-28 01:46:06 -0800
+  ↳ app/controllers/api/messages_controller.rb:8
+Completed 404 Not Found in 5ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+
+
+No template found for Api::MessagesController#create, rendering head :no_content
+Completed 204 No Content in 62ms (ActiveRecord: 2.7ms)
+
+
+Processing by Api::MessagesController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mMessage Load (0.9ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:8
+Completed 404 Not Found in 4ms (Views: 0.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2021-11-28 01:48:06 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 43ms (Views: 41.2ms | ActiveRecord: 2.1ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2021-11-28 01:48:06 -0800
+ChatChannel stopped streaming from chat_channel
+Started GET "/api/users" for ::1 at 2021-11-28 01:48:06 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:1
+  Rendered api/users/index.json.jbuilder (1.3ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/messages" for ::1 at 2021-11-28 01:48:06 -0800
+Started GET "/cable" for ::1 at 2021-11-28 01:48:06 -0800
+Processing by Api::MessagesController#index as JSON
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-28 01:48:06 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  Rendering api/messages/index.json.jbuilder
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11
+Registered connection (Z2lkOi8vcGFuZGVtb25pdW0vVXNlci8y)
+  [1m[36mMessage Load (4.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/api/messages/index.json.jbuilder:1
+  Rendered api/messages/index.json.jbuilder (7.4ms)
+Completed 200 OK in 11ms (Views: 6.7ms | ActiveRecord: 4.0ms)
+
+
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+Started POST "/api/messages" for ::1 at 2021-11-28 01:48:14 -0800
+Processing by Api::MessagesController#create as JSON
+  Parameters: {"message"=>{"id"=>"", "content"=>"free", "author_id"=>"2"}}
+Unpermitted parameter: :id
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mMessage Create (1.1ms)[0m  [1m[32mINSERT INTO "messages" ("content", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "free"], ["author_id", 2], ["created_at", "2021-11-28 09:48:14.502020"], ["updated_at", "2021-11-28 09:48:14.502020"]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+  Rendering api/messages/show.json.jbuilder
+  Rendered api/messages/show.json.jbuilder (1.3ms)
+[ActionCable] Broadcasting to chat_channel: "{\"id\":144,\"content\":\"free\",\"authorId\":2}"
+ChatChannel transmitting "{\"id\":144,\"content\":\"free\",\"authorId\":2}" (via streamed from chat_channel)
+ChatChannel transmitting "{\"id\":144,\"content\":\"free\",\"authorId\":2}" (via streamed from chat_channel)
+Started GET "/api/messages/undefined" for ::1 at 2021-11-28 01:48:14 -0800
+Processing by Api::MessagesController#show as JSON
+Started GET "/api/messages/undefined" for ::1 at 2021-11-28 01:48:14 -0800
+  Parameters: {"id"=>"undefined"}
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:8
+Processing by Api::MessagesController#show as JSON
+Completed 404 Not Found in 3ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+  Parameters: {"id"=>"undefined"}
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:8
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+No template found for Api::MessagesController#create, rendering head :no_content
+Completed 204 No Content in 65ms (ActiveRecord: 3.6ms)
+
+
+Started DELETE "/api/messages/140" for ::1 at 2021-11-28 01:55:17 -0800
+Processing by Api::MessagesController#destroy as JSON
+  Parameters: {"id"=>"140"}
+  [1m[36mMessage Load (0.9ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 140], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/messages_controller.rb:40
+  [1m[36mMessage Destroy (0.4ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = $1[0m  [["id", 140]]
+  ↳ app/controllers/api/messages_controller.rb:40
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/messages_controller.rb:40
+  Rendering api/messages/show.json.jbuilder
+  Rendered api/messages/show.json.jbuilder (161.4ms)
+Completed 500 Internal Server Error in 172ms (ActiveRecord: 2.2ms)
+
+
+
+NameError - undefined local variable or method `message' for #<#<Class:0x00007feece207410>:0x00007feee994ad38>
+Did you mean?  @message:
+  app/views/api/messages/show.json.jbuilder:1:in `_app_views_api_messages_show_json_jbuilder___3393890215013645042_34400'
+  app/controllers/api/messages_controller.rb:41:in `destroy'
+
+Started GET "/" for ::1 at 2021-11-28 01:55:38 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 278ms (Views: 276.3ms | ActiveRecord: 1.6ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2021-11-28 01:55:39 -0800
+ChatChannel stopped streaming from chat_channel
+Started GET "/api/users" for ::1 at 2021-11-28 01:55:39 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (7.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:1
+  Rendered api/users/index.json.jbuilder (8.6ms)
+Completed 200 OK in 10ms (Views: 3.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/api/messages" for ::1 at 2021-11-28 01:55:39 -0800
+Started GET "/cable" for ::1 at 2021-11-28 01:55:39 -0800
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-28 01:55:39 -0800
+Processing by Api::MessagesController#index as JSON
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  Rendering api/messages/index.json.jbuilder
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11
+Registered connection (Z2lkOi8vcGFuZGVtb25pdW0vVXNlci8y)
+  [1m[36mMessage Load (3.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+ChatChannel is transmitting the subscription confirmation
+  ↳ app/views/api/messages/index.json.jbuilder:1
+  Rendered api/messages/index.json.jbuilder (6.7ms)
+ChatChannel is streaming from chat_channel
+Completed 200 OK in 10ms (Views: 6.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for ::1 at 2021-11-28 01:55:56 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 56ms (Views: 34.1ms | ActiveRecord: 21.3ms)
+
+
+Started GET "/api/users" for ::1 at 2021-11-28 01:55:56 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:1
+  Rendered api/users/index.json.jbuilder (1.4ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cable" for ::1 at 2021-11-28 01:55:56 -0800
+Started GET "/api/messages" for ::1 at 2021-11-28 01:55:56 -0800
+Processing by Api::MessagesController#index as JSON
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-28 01:55:56 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  Rendering api/messages/index.json.jbuilder
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11
+Registered connection (Z2lkOi8vcGFuZGVtb25pdW0vVXNlci8y)
+  [1m[36mMessage Load (3.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/api/messages/index.json.jbuilder:1
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+  Rendered api/messages/index.json.jbuilder (16.0ms)
+Completed 200 OK in 41ms (Views: 9.5ms | ActiveRecord: 10.4ms)
+
+
+Started POST "/api/messages" for ::1 at 2021-11-28 01:56:04 -0800
+Processing by Api::MessagesController#create as JSON
+  Parameters: {"message"=>{"id"=>"", "content"=>"point", "author_id"=>"2"}}
+Unpermitted parameter: :id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mMessage Create (1.2ms)[0m  [1m[32mINSERT INTO "messages" ("content", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "point"], ["author_id", 2], ["created_at", "2021-11-28 09:56:04.313526"], ["updated_at", "2021-11-28 09:56:04.313526"]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+  Rendering api/messages/show.json.jbuilder
+  Rendered api/messages/show.json.jbuilder (0.9ms)
+[ActionCable] Broadcasting to chat_channel: "{\"id\":145,\"content\":\"point\",\"authorId\":2}"
+ChatChannel transmitting "{\"id\":145,\"content\":\"point\",\"authorId\":2}" (via streamed from chat_channel)
+  Rendering api/messages/show.json.jbuilder
+Started GET "/api/messages/undefined" for ::1 at 2021-11-28 01:56:04 -0800
+  Rendered api/messages/show.json.jbuilder (154.2ms)
+Completed 500 Internal Server Error in 187ms (ActiveRecord: 3.6ms)
+
+
+Processing by Api::MessagesController#show as JSON
+  Parameters: {"id"=>"undefined"}
+
+NameError - undefined local variable or method `message' for #<#<Class:0x00007feece2a2cd0>:0x00007feecb251dd8>
+Did you mean?  @message:
+  app/views/api/messages/show.json.jbuilder:1:in `_app_views_api_messages_show_json_jbuilder___3393890215013645042_37940'
+  app/controllers/api/messages_controller.rb:32:in `create'
+
+  [1m[36mMessage Load (122.7ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:8
+Completed 404 Not Found in 124ms (Views: 0.1ms | ActiveRecord: 122.7ms)
+
+
+Started GET "/cable" for ::1 at 2021-11-28 01:56:06 -0800
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-28 01:56:06 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "dXDPE79dpcGeeGjr6QPx0w"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11
+Registered connection (Z2lkOi8vcGFuZGVtb25pdW0vVXNlci8x)
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+Started GET "/" for ::1 at 2021-11-28 01:57:20 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 50ms (Views: 32.2ms | ActiveRecord: 17.6ms)
+
+
+Started GET "/api/users" for ::1 at 2021-11-28 01:57:20 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:1
+  Rendered api/users/index.json.jbuilder (1.2ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cable" for ::1 at 2021-11-28 01:57:20 -0800
+Started GET "/api/messages" for ::1 at 2021-11-28 01:57:20 -0800
+Processing by Api::MessagesController#index as JSON
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-28 01:57:20 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11
+Registered connection (Z2lkOi8vcGFuZGVtb25pdW0vVXNlci8y)
+  Rendering api/messages/index.json.jbuilder
+  [1m[36mMessage Load (2.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+ChatChannel is transmitting the subscription confirmation
+  ↳ app/views/api/messages/index.json.jbuilder:1
+ChatChannel is streaming from chat_channel
+  Rendered api/messages/index.json.jbuilder (42.0ms)
+Completed 200 OK in 49ms (Views: 10.6ms | ActiveRecord: 34.7ms)
+
+
+Started GET "/cable" for ::1 at 2021-11-28 01:57:28 -0800
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-28 01:57:28 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "dXDPE79dpcGeeGjr6QPx0w"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11
+Registered connection (Z2lkOi8vcGFuZGVtb25pdW0vVXNlci8x)
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+Started POST "/api/messages" for ::1 at 2021-11-28 01:57:31 -0800
+Processing by Api::MessagesController#create as JSON
+  Parameters: {"message"=>{"id"=>"", "content"=>"hey", "author_id"=>"2"}}
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mMessage Create (0.7ms)[0m  [1m[32mINSERT INTO "messages" ("content", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "hey"], ["author_id", 2], ["created_at", "2021-11-28 09:57:31.736868"], ["updated_at", "2021-11-28 09:57:31.736868"]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+  Rendering api/messages/show.json.jbuilder
+  Rendered api/messages/show.json.jbuilder (0.5ms)
+[ActionCable] Broadcasting to chat_channel: "{\"id\":146,\"content\":\"hey\",\"authorId\":2}"
+ChatChannel transmitting "{\"id\":146,\"content\":\"hey\",\"authorId\":2}" (via streamed from chat_channel)
+ChatChannel transmitting "{\"id\":146,\"content\":\"hey\",\"authorId\":2}" (via streamed from chat_channel)
+  Rendering api/messages/show.json.jbuilder
+  Rendered api/messages/show.json.jbuilder (0.4ms)
+Completed 200 OK in 16ms (Views: 2.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/messages/undefined" for ::1 at 2021-11-28 01:57:31 -0800
+Processing by Api::MessagesController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:8
+Completed 404 Not Found in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/messages/undefined" for ::1 at 2021-11-28 01:57:31 -0800
+Processing by Api::MessagesController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:8
+Completed 404 Not Found in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2021-11-28 01:57:47 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "dXDPE79dpcGeeGjr6QPx0w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 34ms (Views: 33.8ms | ActiveRecord: 0.6ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2021-11-28 01:57:47 -0800
+ChatChannel stopped streaming from chat_channel
+Started GET "/api/users" for ::1 at 2021-11-28 01:57:47 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:1
+  Rendered api/users/index.json.jbuilder (2.4ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/messages" for ::1 at 2021-11-28 01:57:47 -0800
+Started GET "/cable" for ::1 at 2021-11-28 01:57:47 -0800
+Processing by Api::MessagesController#index as JSON
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-28 01:57:47 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  Rendering api/messages/index.json.jbuilder
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "dXDPE79dpcGeeGjr6QPx0w"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11
+Registered connection (Z2lkOi8vcGFuZGVtb25pdW0vVXNlci8x)
+  ↳ app/views/api/messages/index.json.jbuilder:1
+  Rendered api/messages/index.json.jbuilder (4.4ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.5ms)
+
+
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+Started POST "/api/messages" for ::1 at 2021-11-28 01:57:54 -0800
+Processing by Api::MessagesController#create as JSON
+  Parameters: {"message"=>{"id"=>"", "content"=>"hello", "author_id"=>"1"}}
+Unpermitted parameter: :id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mMessage Create (0.9ms)[0m  [1m[32mINSERT INTO "messages" ("content", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "hello"], ["author_id", 1], ["created_at", "2021-11-28 09:57:54.394628"], ["updated_at", "2021-11-28 09:57:54.394628"]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+  Rendering api/messages/show.json.jbuilder
+  Rendered api/messages/show.json.jbuilder (1.0ms)
+[ActionCable] Broadcasting to chat_channel: "{\"id\":147,\"content\":\"hello\",\"authorId\":1}"
+ChatChannel transmitting "{\"id\":147,\"content\":\"hello\",\"authorId\":1}" (via streamed from chat_channel)
+ChatChannel transmitting "{\"id\":147,\"content\":\"hello\",\"authorId\":1}" (via streamed from chat_channel)
+  Rendering api/messages/show.json.jbuilder
+  Rendered api/messages/show.json.jbuilder (0.6ms)
+Completed 200 OK in 27ms (Views: 4.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/api/messages/undefined" for ::1 at 2021-11-28 01:57:54 -0800
+Started GET "/api/messages/undefined" for ::1 at 2021-11-28 01:57:54 -0800
+Processing by Api::MessagesController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:8
+Processing by Api::MessagesController#show as JSON
+Completed 404 Not Found in 4ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+  Parameters: {"id"=>"undefined"}
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:8
+Completed 404 Not Found in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-11-28 02:03:59 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 299ms (Views: 297.3ms | ActiveRecord: 1.5ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2021-11-28 02:03:59 -0800
+ChatChannel stopped streaming from chat_channel
+Started GET "/api/users" for ::1 at 2021-11-28 02:04:00 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:1
+  Rendered api/users/index.json.jbuilder (2.7ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/messages" for ::1 at 2021-11-28 02:04:00 -0800
+Started GET "/cable" for ::1 at 2021-11-28 02:04:00 -0800
+Processing by Api::MessagesController#index as JSON
+  Rendering api/messages/index.json.jbuilder
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-28 02:04:00 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mMessage Load (3.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/api/messages/index.json.jbuilder:1
+  Rendered api/messages/index.json.jbuilder (10.1ms)
+Completed 200 OK in 13ms (Views: 8.7ms | ActiveRecord: 3.6ms)
+
+
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11
+Registered connection (Z2lkOi8vcGFuZGVtb25pdW0vVXNlci8y)
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+Started POST "/api/messages" for ::1 at 2021-11-28 02:04:04 -0800
+Processing by Api::MessagesController#create as JSON
+  Parameters: {"message"=>{"id"=>"", "content"=>"test", "author_id"=>"2"}}
+Unpermitted parameter: :id
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mMessage Create (1.3ms)[0m  [1m[32mINSERT INTO "messages" ("content", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "test"], ["author_id", 2], ["created_at", "2021-11-28 10:04:04.547705"], ["updated_at", "2021-11-28 10:04:04.547705"]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+  Rendering api/messages/show.json.jbuilder
+  Rendered api/messages/show.json.jbuilder (1.0ms)
+[ActionCable] Broadcasting to chat_channel: "{\"id\":148,\"content\":\"test\",\"authorId\":2}"
+ChatChannel transmitting "{\"id\":148,\"content\":\"test\",\"authorId\":2}" (via streamed from chat_channel)
+ChatChannel transmitting "{\"id\":148,\"content\":\"test\",\"authorId\":2}" (via streamed from chat_channel)
+  Rendering api/messages/show.json.jbuilder
+  Rendered api/messages/show.json.jbuilder (0.7ms)
+Completed 200 OK in 33ms (Views: 5.6ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/api/messages/undefined" for ::1 at 2021-11-28 02:04:04 -0800
+Processing by Api::MessagesController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mMessage Load (1.3ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:8
+Completed 404 Not Found in 5ms (Views: 0.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2021-11-28 02:05:19 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 432ms (Views: 431.1ms | ActiveRecord: 0.9ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2021-11-28 02:05:19 -0800
+ChatChannel stopped streaming from chat_channel
+Started GET "/api/users" for ::1 at 2021-11-28 02:05:19 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:1
+  Rendered api/users/index.json.jbuilder (1.4ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/messages" for ::1 at 2021-11-28 02:05:19 -0800
+Started GET "/cable" for ::1 at 2021-11-28 02:05:19 -0800
+Processing by Api::MessagesController#index as JSON
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-28 02:05:19 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  Rendering api/messages/index.json.jbuilder
+  [1m[36mMessage Load (0.8ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/api/messages/index.json.jbuilder:1
+  Rendered api/messages/index.json.jbuilder (7.1ms)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11
+Registered connection (Z2lkOi8vcGFuZGVtb25pdW0vVXNlci8y)
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+Started GET "/" for ::1 at 2021-11-28 02:05:21 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "dXDPE79dpcGeeGjr6QPx0w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 41ms (Views: 40.5ms | ActiveRecord: 0.7ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2021-11-28 02:05:21 -0800
+ChatChannel stopped streaming from chat_channel
+Started GET "/api/users" for ::1 at 2021-11-28 02:05:21 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:1
+  Rendered api/users/index.json.jbuilder (2.6ms)
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/messages" for ::1 at 2021-11-28 02:05:21 -0800
+Started GET "/cable" for ::1 at 2021-11-28 02:05:21 -0800
+Processing by Api::MessagesController#index as JSON
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-28 02:05:21 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  Rendering api/messages/index.json.jbuilder
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/api/messages/index.json.jbuilder:1
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "dXDPE79dpcGeeGjr6QPx0w"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11
+Registered connection (Z2lkOi8vcGFuZGVtb25pdW0vVXNlci8x)
+  Rendered api/messages/index.json.jbuilder (7.7ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.6ms)
+
+
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+Started POST "/api/messages" for ::1 at 2021-11-28 02:05:24 -0800
+Processing by Api::MessagesController#create as JSON
+  Parameters: {"message"=>{"id"=>"", "content"=>"please", "author_id"=>"1"}}
+Unpermitted parameter: :id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[36mMessage Create (1.6ms)[0m  [1m[32mINSERT INTO "messages" ("content", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "please"], ["author_id", 1], ["created_at", "2021-11-28 10:05:24.815975"], ["updated_at", "2021-11-28 10:05:24.815975"]]
+  ↳ app/controllers/api/messages_controller.rb:30
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/messages_controller.rb:30
+  Rendering api/messages/show.json.jbuilder
+  Rendered api/messages/show.json.jbuilder (0.8ms)
+[ActionCable] Broadcasting to chat_channel: "{\"id\":149,\"content\":\"please\",\"authorId\":1}"
+ChatChannel transmitting "{\"id\":149,\"content\":\"please\",\"authorId\":1}" (via streamed from chat_channel)
+ChatChannel transmitting "{\"id\":149,\"content\":\"please\",\"authorId\":1}" (via streamed from chat_channel)
+  Rendering api/messages/show.json.jbuilder
+  Rendered api/messages/show.json.jbuilder (0.5ms)
+Completed 200 OK in 25ms (Views: 3.9ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/api/messages" for ::1 at 2021-11-28 02:05:24 -0800
+Processing by Api::MessagesController#index as JSON
+Started GET "/api/messages" for ::1 at 2021-11-28 02:05:24 -0800
+  Rendering api/messages/index.json.jbuilder
+Processing by Api::MessagesController#index as JSON
+  [1m[36mMessage Load (1.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/api/messages/index.json.jbuilder:1
+  Rendered api/messages/index.json.jbuilder (7.6ms)
+  Rendering api/messages/index.json.jbuilder
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/api/messages/index.json.jbuilder:1
+  Rendered api/messages/index.json.jbuilder (5.2ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2021-11-28 02:05:50 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "dXDPE79dpcGeeGjr6QPx0w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 273ms (Views: 271.9ms | ActiveRecord: 0.6ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2021-11-28 02:05:50 -0800
+ChatChannel stopped streaming from chat_channel
+Started GET "/api/users" for ::1 at 2021-11-28 02:05:50 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:1
+  Rendered api/users/index.json.jbuilder (2.0ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/messages" for ::1 at 2021-11-28 02:05:50 -0800
+Started GET "/cable" for ::1 at 2021-11-28 02:05:50 -0800
+Processing by Api::MessagesController#index as JSON
+  Rendering api/messages/index.json.jbuilder
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-28 02:05:50 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mMessage Load (1.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/api/messages/index.json.jbuilder:1
+  Rendered api/messages/index.json.jbuilder (4.8ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 1.2ms)
+
+
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "dXDPE79dpcGeeGjr6QPx0w"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11
+Registered connection (Z2lkOi8vcGFuZGVtb25pdW0vVXNlci8x)
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel
+Started GET "/" for ::1 at 2021-11-28 02:05:53 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 37ms (Views: 36.3ms | ActiveRecord: 0.7ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2021-11-28 02:05:53 -0800
+ChatChannel stopped streaming from chat_channel
+Started GET "/api/users" for ::1 at 2021-11-28 02:05:53 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:1
+  Rendered api/users/index.json.jbuilder (3.2ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/cable" for ::1 at 2021-11-28 02:05:53 -0800
+Started GET "/api/messages" for ::1 at 2021-11-28 02:05:53 -0800
+Processing by Api::MessagesController#index as JSON
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-28 02:05:53 -0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  Rendering api/messages/index.json.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qMwMExbvlHqbsliLCEJMvg"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11
+Registered connection (Z2lkOi8vcGFuZGVtb25pdW0vVXNlci8y)
+  [1m[36mMessage Load (1.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/api/messages/index.json.jbuilder:1
+  Rendered api/messages/index.json.jbuilder (4.3ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 1.2ms)
+
+
+ChatChannel is transmitting the subscription confirmation
+ChatChannel is streaming from chat_channel

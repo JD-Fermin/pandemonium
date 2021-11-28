@@ -12,7 +12,7 @@ const mDTP = (dispatch) => ({
     updateMessage: message => dispatch(updateMessage(message)),
     deleteMessage: id => dispatch(deleteMessage(id)),
     fetchMessages: () => dispatch(fetchMessages()),
-    fetchMessage: message => dispatch(fetchMessage(message))
+    fetchMessage: messageId => dispatch(fetchMessage(messageId))
 
 })
 

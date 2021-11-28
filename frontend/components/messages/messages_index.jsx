@@ -14,9 +14,9 @@ class MessagesIndex extends React.Component {
             {channel: "ChatChannel"},
             {
                 received: (data) => {
-                    
-                    
-                    this.props.fetchMessage(data.id)
+                    // console.log(data)
+                    this.props.fetchMessages()
+                    // this.props.fetchMessage(data.id)
 
                     
                 }, 

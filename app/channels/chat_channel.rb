@@ -9,6 +9,10 @@ class ChatChannel < ApplicationCable::Channel
     ActionCable.server.broadcast('chat_channel', socket)
   end
 
+  def editMessage(data)
+    
+  end
+
 
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
