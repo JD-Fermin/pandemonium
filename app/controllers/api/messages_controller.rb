@@ -19,7 +19,7 @@ class Api::MessagesController < ApplicationController
         if @message.nil?
             render json: ["Message does not exist."], status: 404
         elsif @message.update(update_params)
-            render :show
+            ActionCable.server.broadcast('chat_channel', Api::MessagesController.render(:show, locals: {message: @message}))
         else
             render @message.errors.full_messages, status: 422
         end
@@ -29,7 +29,7 @@ class Api::MessagesController < ApplicationController
         @message = Message.new(message_params)
         if @message.save
             ActionCable.server.broadcast('chat_channel', Api::MessagesController.render(:show, locals: {message: @message}))
-            render :show, locals: {message: @message}
+            # render :show, locals: {message: @message}
         else
             render @message.errors.full_messages, status: 422
         end
@@ -38,7 +38,7 @@ class Api::MessagesController < ApplicationController
     def destroy
         @message = Message.find_by(id: params[:id])
         @message.destroy
-        render :show
+        ActionCable.server.broadcast('chat_channel', Api::MessagesController.render(:show, locals: {message: @message}))
     end
     private
     def message_params

@@ -39,8 +39,8 @@ class Home extends React.Component {
                             <ul className="users-list">
                                 <h3>Users</h3>
                                 {
-                                    this.props.users.map((user, i) => (
-                                        <li key={i}>{user.username}</li>
+                                    this.props.users.map((user) => (
+                                        <li key={user.id}>{user.username}</li>
                                     ))
                                 }
                             </ul>

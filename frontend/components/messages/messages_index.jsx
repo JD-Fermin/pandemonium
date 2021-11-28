@@ -44,8 +44,8 @@ class MessagesIndex extends React.Component {
                 <ul className="messages-list">
                     {/* <h3>Messages</h3> */}
                     {
-                        this.props.messages.map((message, i) => (
-                            <MessagesIndexItem key={i}  message={message} currentUser={this.props.currentUser} author={this.props.users[message.authorId]} updateMessage={this.props.updateMessage} deleteMessage={this.props.deleteMessage} />
+                        this.props.messages.map((message) => (
+                            <MessagesIndexItem key={message.id}  message={message} currentUser={this.props.currentUser} author={this.props.users[message.authorId]} updateMessage={this.props.updateMessage} deleteMessage={this.props.deleteMessage} />
                         ))
                     }
                 </ul>
