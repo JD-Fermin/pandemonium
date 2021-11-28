@@ -15,7 +15,8 @@ class MessageForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault()
         // this.props.submitForm(this.state)
-        App.cable.subscriptions.subscriptions[0].speak(this.state)       
+        App.cable.subscriptions.subscriptions[0].speak(this.state)
+        // App.cable.subscriptions.subscriptions[0].received()
         // this.props.submitForm(this.state)
         if (this.props.formType === 'create') {
             this.setState({

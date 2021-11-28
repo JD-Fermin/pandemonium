@@ -1,15 +1,24 @@
 import React from 'react'
 import MessagesIndexItem from './messages_index_item'
+// import { EventEmitter } from "events"
+
+// const em = new EventEmitter()
 class MessagesIndex extends React.Component {
+    constructor(props) {
+        super(props)
+    }
     componentDidMount() {
+        // const em = new EventEmitter()
         this.props.fetchMessages();
         App.cable.subscriptions.create(
             {channel: "ChatChannel"},
             {
-                received: function(data) {
-                    console.log('wtf')
-                    this.props.messages.push(data)
-                
+                received: (data) => {
+                    
+                    
+                    this.props.fetchMessage(data.id)
+
+                    
                 }, 
 
                 speak: function(data){
@@ -17,9 +26,15 @@ class MessagesIndex extends React.Component {
                 }
             }
         )
-    
+        // em.on("message", () => {
+        //     console.log('ha')
+        //     this.props.fetchMessages()
+        // })
+        // setInterval(() => {
+        //     em.emit("message")
+        // }, 3000)
     }
-
+    
     
    
     render() {
