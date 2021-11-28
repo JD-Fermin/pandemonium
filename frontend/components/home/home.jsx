@@ -1,4 +1,5 @@
 import React from "react";
+import ChannelList from "../channels/channel_list";
 
 import Chatbox from "../messages/chatbox";
 class Home extends React.Component {
@@ -20,6 +21,7 @@ class Home extends React.Component {
                     <div className="server-title">
                         <h2>Round Table</h2>
                     </div>
+                    <ChannelList />
                     <div className="user-ops">
                         <h3>{this.props.currentUser.username}</h3>
                         <button className="button" onClick={this.props.logout}>Log Out</button>

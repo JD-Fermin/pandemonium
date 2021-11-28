@@ -10,22 +10,22 @@ class MessagesIndex extends React.Component {
     componentDidMount() {
         // const em = new EventEmitter()
         this.props.fetchMessages();
-        App.cable.subscriptions.create(
-            {channel: "ChatChannel"},
-            {
-                received: (data) => {
-                    // console.log(data)
-                    this.props.fetchMessages()
-                    // this.props.fetchMessage(data.id)
+        // App.cable.subscriptions.create(
+        //     {channel: "ChatChannel"},
+        //     {
+        //         received: (data) => {
+        //             // console.log(data)
+        //             this.props.fetchMessages()
+        //             // this.props.fetchMessage(data.id)
 
                     
-                }, 
+        //         }, 
 
-                speak: function(data){
-                    return this.perform("speak", data)
-                }
-            }
-        )
+        //         speak: function(data){
+        //             return this.perform("speak", data)
+        //         }
+        //     }
+        // )
         // em.on("message", () => {
         //     console.log('ha')
         //     this.props.fetchMessages()
