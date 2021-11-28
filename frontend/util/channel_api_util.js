@@ -3,7 +3,9 @@ export const ChannelApi = {
         $.ajax({
             method: 'GET',
             url: 'api/channels'
-        })
+        }).then(
+            res => Object.values(res)
+        )
     ),
     
     create: (channel) => (

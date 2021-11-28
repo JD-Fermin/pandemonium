@@ -1,30 +1,42 @@
 import React from "react";
-import { ChannelApi } from "../../util/channel_api_util";
+import { connect } from "react-redux";
+import { fetchChannelList, setActiveChannel } from "../../actions/channel_actions";
+
+
 const ChannelItem = (props) => {
-   return  <li>{props.name}</li>
+    const { channel, isActive, setActiveChannel } = props;
+    const handleClick = () => setActiveChannel(channel);
+    const name = isActive ? `[${channel.name}]` : channel.name;
+    return  <li onClick={handleClick}>{name}</li>
 }
 
 class ChannelList extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = { 
-            channelList: []
-        }
-    }
-
+    
     componentDidMount() {
-        ChannelApi.list().then(res => {
-            console.log('channels: ', res)
-            this.setState({channelList: Object.values(res)})
-        })
+        this.props.fetchChannelList()
     }
 
     render() {
-        const channelList = this.state.channelList
+        const channelList = this.props.channelList
         return channelList.map(channel =>
-            <ChannelItem key={channel.id} name={channel.name} />
+            <ChannelItem
+                key={channel.id}
+                channel={channel}
+                setActiveChannel={this.props.setActiveChannel} 
+                isActive={channel.id === this.props.activeChannelId}
+             />
         )
     }
 }
 
-export default ChannelList
+const mSTP = (state) => ({
+    channelList: state.entities.channels.channelList,
+    activeChannelId: (state.entities.channels.activeChannel || {}).id
+})
+
+const mDTP = (dispatch) => ({
+    setActiveChannel: (channel) => dispatch(setActiveChannel(channel)),
+    fetchChannelList: () => dispatch(fetchChannelList())
+})
+
+export default connect(mSTP, mDTP)(ChannelList)

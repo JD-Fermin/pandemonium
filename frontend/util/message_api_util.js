@@ -1,21 +1,18 @@
-export const fetchMessages = () => (
+export const fetchMessages = (channelId) => (
     $.ajax({
         method: "GET",
-        url: "api/messages"
-    })
+        url: `api/channels/${channelId}/messages`
+    }).then(
+        res => Object.values(res)
+    )
 )
 
-export const fetchMessage = (id) => (
-    $.ajax({
-        method: "GET",
-        url: `api/messages/${id}`
-    })
-)
+
 
 export const createMessage = (message) => (
     $.ajax({
         method: "POST",
-        url: "api/messages",
+        url: `api/channels/${message.channel_id}/messages`,
         data: {message: message}
     })
 )
@@ -23,14 +20,14 @@ export const createMessage = (message) => (
 export const updateMessage = (message) => (
     $.ajax({
         method: "PATCH",
-        url: `api/messages/${message.id}`,
+        url: `api/channels/${message.channel_id}/messages/${message.id}`,
         data: {message: message}
     })
 )
 
-export const deleteMessage = (id) => (
+export const deleteMessage = (message) => (
     $.ajax({
         method: "DELETE",
-        url: `api/messages/${id}`
+        url: `api/channels/${message.channel_id}/messages/${message.id}`
     })
 )
