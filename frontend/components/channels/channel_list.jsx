@@ -5,12 +5,19 @@ import CreateChannelForm from "./create_channel_form"
 
 const ChannelItem = (props) => {
     const { channel, isActive, setActiveChannel, deleteChannel } = props;
-    const handleClick = () => setActiveChannel(channel);
     const name = `#${channel.name}`;
-    return  <li onClick={handleClick} className={isActive ? "active-channel" : ""}>
+    const handleChannelClick = () => setActiveChannel(channel);
+    const handleDeleteClick = (channelId) => {
+        return e => {
+            e.stopPropagation();
+            deleteChannel(channelId);
+        }
+    };
+   
+    return  <li onClick={handleChannelClick} className={isActive ? "active-channel" : ""}>
         {name}
         <button>Edit</button>
-        <button onClick={() => deleteChannel(channel.id)}>Delete</button>
+        <button onClick={handleDeleteClick(channel.id)}>Delete</button>
     </li>
 }
 
@@ -19,7 +26,7 @@ class ChannelList extends React.Component {
         super(props);
         this.state = { openForm: false }
         this.toggleForm = this.toggleForm.bind(this)
-        this.handleDelete = this.handleDelete.bind(this)
+       
     }
     componentDidMount() {
         this.props.initFetchChannelList()
@@ -29,10 +36,6 @@ class ChannelList extends React.Component {
         this.setState({ openForm: this.state.openForm ? false : true })
     }
 
-    handleDelete(channelId) {
-        
-        this.props.deleteChannel(channelId)
-    }
 
     render() {
         const channelList = this.props.channelList
@@ -49,8 +52,7 @@ class ChannelList extends React.Component {
                             channel={channel}
                             setActiveChannel={this.props.setActiveChannel} 
                             isActive={channel.id === this.props.activeChannelId}
-                            deleteChannel={this.handleDelete}
-                            first={channelList[0]}
+                            deleteChannel={this.props.deleteChannel}
                          />
                     )
                 }

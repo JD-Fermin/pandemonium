@@ -39,7 +39,7 @@ class Api::ChannelsController < ApplicationController
         # TODO: Check memberships if channel is deleted
         @channel = Channel.find_by(id: params[:id])
         @channel.destroy
-        render json: {}
+        render :show
     end
     
     private

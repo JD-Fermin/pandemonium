@@ -59,5 +59,9 @@ export const updateChannel = (channel) => dispatch => (
 )
 
 export const deleteChannel = (channelId) => dispatch => (
-    ChannelApi.delete(channelId).then(res => dispatch(_deleteChannel(res.id)))
+    ChannelApi.delete(channelId).then(res => {
+        // dispatch(_setActiveChannel())
+        console.log(res, 'RESPONSE')
+        dispatch(_deleteChannel(res.id))
+    })
 )
