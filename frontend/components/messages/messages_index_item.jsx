@@ -9,7 +9,7 @@ class MessagesIndexItem extends React.Component {
         this.toggleButtons = this.toggleButtons.bind(this)
     }
     handleDelete() {
-        this.props.deleteMessage(this.props.message.id)
+        this.props.deleteMessage(this.props.message)
     }
     toggleEdit() {
         this.setState({editing: this.state.editing  ? false : true})

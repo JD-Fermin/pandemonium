@@ -1,3 +1,37 @@
 // Place all the styles related to the Api::Channels controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.channel-list {
+    padding: 4px;
+}
+.channel-list li{
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    font-weight: lighter;
+    padding: 7px;
+}
+
+.channel-list li:hover {
+    background: #a9dbb9;
+    transition: 0.2s;
+}
+.active-channel, li.active-channel:hover {
+    background: #B7E4C7;
+}
+
+.channel-header p {
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    font-weight: lighter;
+    padding: 7px;
+    margin-left: 10px;
+}
+
+.text-channels-header {
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    font-weight: normal;
+    padding: 7px;
+    display: flex;
+    justify-content: space-between;
+}

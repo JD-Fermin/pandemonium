@@ -1,6 +1,6 @@
 import React from "react";
 import ChannelList from "../channels/channel_list";
-
+import ChannelHeader from "../channels/channel_header"
 import Chatbox from "../messages/chatbox";
 class Home extends React.Component {
     componentDidMount() {
@@ -10,8 +10,7 @@ class Home extends React.Component {
     render() {
         if (!this.props.currentUser) return null;
         if(this.props.users.length === 0) return null;
-        // if(this.props.messages.length === 0) return null;
-        // if (!this.props.users) return null;
+        
         return (
             <div className="home">
                 <div className="server-bar">
@@ -30,10 +29,11 @@ class Home extends React.Component {
                 </div>
                 <div className="home-content">
                     <nav>
-                        <div className="channel-header">
+                        {/* <div className="channel-header">
                             <span>#</span>
                             <h2>general</h2>
-                        </div>
+                        </div> */}
+                        <ChannelHeader />
                     </nav>
                     <div className="chatbox-outer">
                         <Chatbox />

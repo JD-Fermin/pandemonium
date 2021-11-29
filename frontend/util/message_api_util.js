@@ -28,6 +28,6 @@ export const updateMessage = (message) => (
 export const deleteMessage = (message) => (
     $.ajax({
         method: "DELETE",
-        url: `api/channels/${message.channel_id}/messages/${message.id}`
+        url: `api/channels/${message.channelId}/messages/${message.id}`
     })
 )

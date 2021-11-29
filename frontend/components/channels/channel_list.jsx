@@ -6,8 +6,8 @@ import { initFetchChannelList, setActiveChannel } from "../../actions/channel_ac
 const ChannelItem = (props) => {
     const { channel, isActive, setActiveChannel } = props;
     const handleClick = () => setActiveChannel(channel);
-    const name = isActive ? `[${channel.name}]` : channel.name;
-    return  <li onClick={handleClick}>{name}</li>
+    const name = `#${channel.name}`;
+    return  <li onClick={handleClick} className={isActive ? "active-channel" : ""}>{name}</li>
 }
 
 class ChannelList extends React.Component {
@@ -18,14 +18,24 @@ class ChannelList extends React.Component {
 
     render() {
         const channelList = this.props.channelList
-        return channelList.map(channel =>
-            <ChannelItem
-                key={channel.id}
-                channel={channel}
-                setActiveChannel={this.props.setActiveChannel} 
-                isActive={channel.id === this.props.activeChannelId}
-             />
+        return (
+            <ul className="channel-list">
+                <div className="text-channels-header">TEXT CHANNELS
+                    <button>+</button>
+                </div>
+                {
+                    channelList.map(channel =>
+                        <ChannelItem
+                            key={channel.id}
+                            channel={channel}
+                            setActiveChannel={this.props.setActiveChannel} 
+                            isActive={channel.id === this.props.activeChannelId}
+                         />
+                    )
+                }
+            </ul>
         )
+        
     }
 }
 

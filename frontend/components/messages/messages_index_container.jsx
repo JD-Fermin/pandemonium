@@ -11,7 +11,7 @@ const mSTP = (state) => ({
 
 const mDTP = (dispatch) => ({
     updateMessage: message => dispatch(updateMessage(message)),
-    deleteMessage: messageId => dispatch(deleteMessage(messageId)),
+    deleteMessage: message => dispatch(deleteMessage(message)),
     fetchMessages: (channelId) => dispatch(fetchMessages(channelId)),
     
 
