@@ -1,33 +1,31 @@
-export const ChannelApi = {
+export const ServerApi = {
     list: () => (
         $.ajax({
             method: 'GET',
-            url: 'api/channels'
+            url: 'api/servers'
         }) 
     ),
     
-    create: (channel) => (
+    create: (server) => (
         $.ajax({
             method: 'POST',
-            url: 'api/channels',
-            data: { channel }
+            url: 'api/servers',
+            data: { server }
         })
     ),
 
-    update: (channel) => (
+    update: (server) => (
         $.ajax({
             method: 'PATCH',
-            url: `api/channels/${channel.id}`,
-            data: { channel }
+            url: `api/servers/${server.id}`,
+            data: { server }
         })
     ),
     
     delete: (id) => (
         $.ajax({
             method: 'DELETE',
-            url: `api/channels/${id}`,
+            url: `api/servers/${id}`,
         })
     )
 }
-
-
