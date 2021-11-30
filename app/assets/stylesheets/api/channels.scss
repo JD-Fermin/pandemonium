@@ -17,6 +17,7 @@
 }
 .active-channel, li.active-channel:hover {
     background: #B7E4C7;
+
 }
 
 .channel-header p {
@@ -50,7 +51,7 @@
 .create-channel-modal {
     position: fixed;
     
-    left: 30%;
+    // left: 30%;
     background: #B7E4C7;
     width: 400px;
     height: 420px;
@@ -70,5 +71,6 @@
 .create-channel-buttons {
     padding: 10px;
 }
+
 
 
