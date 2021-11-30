@@ -22,3 +22,17 @@ User.create(
     email: "xyzz@sstr.com",
     password: "password"
 )
+
+Channel.create(
+    name: "general"
+)
+
+Channel.create(
+    name: "nerdery",
+    description: "Place for the geeks"
+)
+
+Channel.create(
+    name: "nunnery",
+    description: "Place for the devouts"
+)
