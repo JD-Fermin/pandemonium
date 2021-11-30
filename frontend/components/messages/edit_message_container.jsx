@@ -1,10 +1,11 @@
 import { connect } from "react-redux"
 import { updateMessage } from "../../actions/message_actions"
 import MessageForm from "./message_form"
+import { withRouter } from "react-router"
 
-const mSTP = (state) => ({
+const mSTP = (state, ownProps) => ({
     formType: "edit",
-    activeChannelId:  (state.entities.channels.activeChannel || {}).id
+    activeChannelId: ownProps.match.params.channelId
 })
 
 const mDTP = (dispatch) => ({
@@ -13,4 +14,4 @@ const mDTP = (dispatch) => ({
 })
 
 
-export default connect(mSTP, mDTP)(MessageForm)
+export default withRouter(connect(mSTP, mDTP)(MessageForm))

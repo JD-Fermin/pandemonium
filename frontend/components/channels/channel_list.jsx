@@ -1,25 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import { deleteChannel, initFetchChannelList, setActiveChannel } from "../../actions/channel_actions";
+import { deleteChannel, fetchChannelList, initFetchChannelList, setActiveChannel } from "../../actions/channel_actions";
 import CreateChannelForm from "./create_channel_form"
-
-const ChannelItem = (props) => {
-    const { channel, isActive, setActiveChannel, deleteChannel } = props;
-    const name = `#${channel.name}`;
-    const handleChannelClick = () => setActiveChannel(channel);
-    const handleDeleteClick = (channelId) => {
-        return e => {
-            e.stopPropagation();
-            deleteChannel(channelId);
-        }
-    };
-   
-    return  <li onClick={handleChannelClick} className={isActive ? "active-channel" : ""}>
-        {name}
-        <button>Edit</button>
-        <button onClick={handleDeleteClick(channel.id)}>Delete</button>
-    </li>
-}
+import { withRouter } from "react-router-dom";
+import ChannelItem from "./channel_item"
 
 class ChannelList extends React.Component {
     constructor(props) {
@@ -29,7 +13,7 @@ class ChannelList extends React.Component {
        
     }
     componentDidMount() {
-        this.props.initFetchChannelList()
+        this.props.fetchChannelList();
     }
 
     toggleForm() {
@@ -46,15 +30,18 @@ class ChannelList extends React.Component {
                     { this.state.openForm ? <div className="create-channel-container"><CreateChannelForm toggleForm={this.toggleForm} /></div> : null }
                 </div>
                 {
-                    channelList.map(channel =>
-                        <ChannelItem
+                    channelList.map(channel => {
+                        
+                        
+                        return <ChannelItem
                             key={channel.id}
                             channel={channel}
                             setActiveChannel={this.props.setActiveChannel} 
-                            isActive={channel.id === this.props.activeChannelId}
+                            // isActive={channel.id === this.props.activeChannelId}
                             deleteChannel={this.props.deleteChannel}
+                            activeChannelId={this.props.activeChannelId}
                          />
-                    )
+                    })
                 }
             </ul>
         )
@@ -62,15 +49,16 @@ class ChannelList extends React.Component {
     }
 }
 
-const mSTP = (state) => ({
-    channelList: Object.values(state.entities.channels.channelList),
-    activeChannelId: (state.entities.channels.activeChannel || {}).id
+const mSTP = (state, ownProps) => ({
+    location: ownProps.location,
+    channelList: Object.values(state.entities.channels.channelList)
 })
 
 const mDTP = (dispatch) => ({
     setActiveChannel: (channel) => dispatch(setActiveChannel(channel)),
     initFetchChannelList: () => dispatch(initFetchChannelList()),
+    fetchChannelList: () => dispatch(fetchChannelList()),
     deleteChannel: (channelId) => dispatch(deleteChannel(channelId))
 })
 
-export default connect(mSTP, mDTP)(ChannelList)
+export default withRouter(connect(mSTP, mDTP)(ChannelList))

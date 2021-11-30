@@ -20,7 +20,7 @@ class Home extends React.Component {
                     <div className="server-title">
                         <h2>Round Table</h2>
                     </div>
-                    <ChannelList />
+                    <ChannelList activeChannelId={this.props.activeChannelId}/>
                     <div className="user-ops">
                         <h3>{this.props.currentUser.username}</h3>
                         <button className="button" onClick={this.props.logout}>Log Out</button>
@@ -33,7 +33,7 @@ class Home extends React.Component {
                             <span>#</span>
                             <h2>general</h2>
                         </div> */}
-                        <ChannelHeader />
+                        <ChannelHeader activeChannelId={this.props.activeChannelId}/>
                     </nav>
                     <div className="chatbox-outer">
                         <Chatbox />

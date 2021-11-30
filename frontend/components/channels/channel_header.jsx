@@ -16,8 +16,8 @@ class ChannelHeader extends React.Component {
     }
 }
 
-const mSTP = (state) => ({
-    activeChannel: (state.entities.channels.activeChannel)
+const mSTP = (state, ownProps) => ({
+    activeChannel: state.entities.channels.channelList[ownProps.activeChannelId]
 })
 
 

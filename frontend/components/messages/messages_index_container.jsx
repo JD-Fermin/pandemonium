@@ -2,11 +2,13 @@ import { connect } from "react-redux"
 import { deleteMessage,  updateMessage } from "../../actions/message_actions"
 import MessagesIndex from "./messages_index"
 import { fetchMessages } from "../../actions/message_actions"
-const mSTP = (state) => ({
+import { withRouter } from "react-router"
+const mSTP = (state, ownProps) => ({
     users: state.entities.users,
     messages: Object.values(state.entities.messages),
     currentUser: state.session.currentUser,
-    activeChannelId:  (state.entities.channels.activeChannel || {}).id
+    activeChannelId:  ownProps.match.params.channelId,
+
 })
 
 const mDTP = (dispatch) => ({
@@ -17,4 +19,4 @@ const mDTP = (dispatch) => ({
 
 })
 
-export default connect(mSTP, mDTP)(MessagesIndex)
+export default withRouter(connect(mSTP, mDTP)(MessagesIndex))
