@@ -11,6 +11,7 @@ class ChannelList extends React.Component {
         this.state = { openForm: false, editing: false }
         this.toggleForm = this.toggleForm.bind(this)
         this.toggleEdit = this.toggleEdit.bind(this)
+        // this.refresh = new Date()
     }
     componentDidMount() {
         this.props.fetchChannelList();
@@ -24,33 +25,35 @@ class ChannelList extends React.Component {
         this.setState({ editing: this.state.editing ? false : true })
     }
 
+    
+    
+
     render() {
         const channelList = this.props.channelList
+        
         return (
             <ul className="channel-list">
                 <div className="text-channels-header">TEXT CHANNELS
                     <button onClick={this.toggleForm}>+</button>
-                    { this.state.openForm && !this.state.editing ? <div className="create-channel-container"><CreateChannelForm toggleForm={this.toggleForm} /></div> : null }
-                    { this.state.openForm && this.state.editing ? <div className="create-channel-container"><EditChannelForm toggleForm={this.toggleForm} toggleEdit={this.toggleEdit}/></div> : null }
+                    {this.state.openForm && !this.state.editing ? <div className="create-channel-container"><CreateChannelForm toggleForm={this.toggleForm} /></div> : null}
+                    {this.state.openForm && this.state.editing ? <div className="create-channel-container"><EditChannelForm toggleForm={this.toggleForm} toggleEdit={this.toggleEdit} /></div> : null}
 
                 </div>
                 {
                     channelList.map(channel => {
-                        
-                        
                         return <ChannelItem
-                            key={channel.id}
+                            key={channel.id + channel.name}
                             channel={channel}
                             deleteChannel={this.props.deleteChannel}
                             activeChannelId={this.props.activeChannelId}
                             toggleForm={this.toggleForm}
                             toggleEdit={this.toggleEdit}
-                         />
+                        />
                     })
                 }
             </ul>
         )
-        
+
     }
 }
 
@@ -60,7 +63,7 @@ const mSTP = (state, ownProps) => ({
 })
 
 const mDTP = (dispatch) => ({
-    
+
     fetchChannelList: () => dispatch(fetchChannelList()),
     deleteChannel: (channelId) => dispatch(deleteChannel(channelId))
 })

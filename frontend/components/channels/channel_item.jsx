@@ -12,6 +12,7 @@ class ChannelItem extends React.Component {
     }
 
     
+    
     handleChannelClick() {
 
         this.props.history.push(`/channels/${this.props.channel.id}`)

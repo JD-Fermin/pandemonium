@@ -25,7 +25,7 @@ class EditChannelForm extends React.Component {
         this.setState({ name: '', description: '' })
         this.props.toggleForm();
         this.props.toggleEdit();
-        this.props.fetchList();
+        
     }
     render(){
         if (!this.props.channel) return null;
