@@ -14,6 +14,7 @@
 .channel-list li:hover {
     background: #a9dbb9;
     transition: 0.2s;
+    cursor: pointer;
 }
 .active-channel, li.active-channel:hover {
     background: #B7E4C7;

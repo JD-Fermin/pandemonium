@@ -2,30 +2,30 @@ import React from "react";
 import ChannelList from "../channels/channel_list";
 import ChannelHeader from "../channels/channel_header"
 import Chatbox from "../messages/chatbox";
+import ServerList from "../servers/server_list"
 class Home extends React.Component {
     componentDidMount() {
         this.props.fetchUsers();
-        
+    
     }
     render() {
         if (!this.props.currentUser) return null;
-        if(this.props.users.length === 0) return null;
-        
+        if (this.props.users.length === 0) return null;
+       
         return (
             <div className="home">
-                <div className="server-bar">
-                    
-                </div>
+
+                <ServerList />
                 <div className="channel-bar">
                     <div className="server-title">
-                        <h2>Round Table</h2>
+                        <h2>Active Server</h2>
                     </div>
-                    <ChannelList activeChannelId={this.props.activeChannelId}/>
+                    <ChannelList activeChannelId={this.props.activeChannelId} />
                     <div className="user-ops">
                         <h3>{this.props.currentUser.username}</h3>
                         <button className="button" onClick={this.props.logout}>Log Out</button>
                     </div>
-                    
+
                 </div>
                 <div className="home-content">
                     <nav>
@@ -33,7 +33,7 @@ class Home extends React.Component {
                             <span>#</span>
                             <h2>general</h2>
                         </div> */}
-                        <ChannelHeader activeChannelId={this.props.activeChannelId}/>
+                        <ChannelHeader activeChannelId={this.props.activeChannelId} />
                     </nav>
                     <div className="chatbox-outer">
                         <Chatbox />
@@ -48,7 +48,7 @@ class Home extends React.Component {
                             </ul>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         )

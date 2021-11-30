@@ -1,3 +1,54 @@
 // Place all the styles related to the Api::Servers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.server-bar {
+    background: #40916C;
+    height: 100%;
+    width: 72px;
+    display: flex;
+    // flex-direction: column;
+   
+    // overflow-y: auto;
+}
+.server-title {
+    border-bottom: 2px solid #74C69D;
+    font-family: 'VT323', monospace;
+    font-size: 32px;
+    padding: 10px;
+}
+
+.server-list {
+    font-family: 'VT323', monospace;
+    font-size: 32px;
+    font-weight: normal;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    // justify-content: spa;
+    overflow-y: auto;
+    width: 72px;
+}
+
+.server-item, .server-create {
+    background: #D8F3DC;
+    // padding: 3px;
+    margin: 7px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    // text-align: center;
+    transition: 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.server-item:hover, .server-create:hover {
+    cursor: pointer;
+    transition: 0.2s;
+    border-radius: 25%;
+}
+
+.server-create {
+    color: green
+}

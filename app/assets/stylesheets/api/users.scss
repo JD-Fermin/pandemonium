@@ -52,12 +52,7 @@
     overflow: hidden;
 }
 
-.server-title {
-    border-bottom: 2px solid #74C69D;
-    font-family: 'VT323', monospace;
-    font-size: 32px;
-    padding: 10px;
-}
+
 
 .users-list li{
     font-family: 'VT323', monospace;
@@ -70,12 +65,6 @@
     background: #B7E4C7;
     border-radius: 4px;
     margin: 3px;
+    cursor: pointer;
 }
 
-.server-bar {
-    background: #40916C;
-    height: 100%;
-    width: 72px;
-    flex-direction: column;
-    padding-top: 12px;
-}
