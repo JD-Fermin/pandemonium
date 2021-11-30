@@ -4,13 +4,13 @@ import { deleteChannel, fetchChannelList } from "../../actions/channel_actions";
 import CreateChannelForm from "./create_channel_form"
 import { withRouter } from "react-router-dom";
 import ChannelItem from "./channel_item"
-
+import EditChannelForm from "./edit_channel_form"
 class ChannelList extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { openForm: false }
+        this.state = { openForm: false, editing: false }
         this.toggleForm = this.toggleForm.bind(this)
-       
+        this.toggleEdit = this.toggleEdit.bind(this)
     }
     componentDidMount() {
         this.props.fetchChannelList();
@@ -20,6 +20,9 @@ class ChannelList extends React.Component {
         this.setState({ openForm: this.state.openForm ? false : true })
     }
 
+    toggleEdit() {
+        this.setState({ editing: this.state.editing ? false : true })
+    }
 
     render() {
         const channelList = this.props.channelList
@@ -27,7 +30,9 @@ class ChannelList extends React.Component {
             <ul className="channel-list">
                 <div className="text-channels-header">TEXT CHANNELS
                     <button onClick={this.toggleForm}>+</button>
-                    { this.state.openForm ? <div className="create-channel-container"><CreateChannelForm toggleForm={this.toggleForm} /></div> : null }
+                    { this.state.openForm && !this.state.editing ? <div className="create-channel-container"><CreateChannelForm toggleForm={this.toggleForm} /></div> : null }
+                    { this.state.openForm && this.state.editing ? <div className="create-channel-container"><EditChannelForm toggleForm={this.toggleForm} toggleEdit={this.toggleEdit}/></div> : null }
+
                 </div>
                 {
                     channelList.map(channel => {
@@ -38,6 +43,8 @@ class ChannelList extends React.Component {
                             channel={channel}
                             deleteChannel={this.props.deleteChannel}
                             activeChannelId={this.props.activeChannelId}
+                            toggleForm={this.toggleForm}
+                            toggleEdit={this.toggleEdit}
                          />
                     })
                 }
