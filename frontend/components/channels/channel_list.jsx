@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { deleteChannel, fetchChannelList, initFetchChannelList, setActiveChannel } from "../../actions/channel_actions";
+import { deleteChannel, fetchChannelList } from "../../actions/channel_actions";
 import CreateChannelForm from "./create_channel_form"
 import { withRouter } from "react-router-dom";
 import ChannelItem from "./channel_item"
@@ -36,8 +36,6 @@ class ChannelList extends React.Component {
                         return <ChannelItem
                             key={channel.id}
                             channel={channel}
-                            setActiveChannel={this.props.setActiveChannel} 
-                            // isActive={channel.id === this.props.activeChannelId}
                             deleteChannel={this.props.deleteChannel}
                             activeChannelId={this.props.activeChannelId}
                          />
@@ -51,12 +49,11 @@ class ChannelList extends React.Component {
 
 const mSTP = (state, ownProps) => ({
     location: ownProps.location,
-    channelList: Object.values(state.entities.channels.channelList)
+    channelList: Object.values(state.entities.channels)
 })
 
 const mDTP = (dispatch) => ({
-    setActiveChannel: (channel) => dispatch(setActiveChannel(channel)),
-    initFetchChannelList: () => dispatch(initFetchChannelList()),
+    
     fetchChannelList: () => dispatch(fetchChannelList()),
     deleteChannel: (channelId) => dispatch(deleteChannel(channelId))
 })

@@ -4,7 +4,7 @@ const ChannelItem = (props) => {
     const { channel, activeChannelId, deleteChannel} = props;
     const name = `#${channel.name}`;
     const handleChannelClick = () => {
-        // setActiveChannel(channel);
+        
         props.history.push(`/channels/${channel.id}`)
     }
 
