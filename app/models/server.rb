@@ -4,4 +4,11 @@ class Server < ApplicationRecord
     validates :description, length: { maximum: 75 }
 
     belongs_to :owner, class_name: :User, foreign_key: :owner_id
+
+    def transfer_ownership(user)
+        self.owner_id = user
+        self.save!
+    end
+
+    
 end
