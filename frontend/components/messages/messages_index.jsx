@@ -1,6 +1,6 @@
 import React from 'react'
 import MessagesIndexItem from './messages_index_item'
-// import { EventEmitter } from "events"
+import { withRouter } from 'react-router'
 
 // const em = new EventEmitter()
 class MessagesIndex extends React.Component {
@@ -52,7 +52,7 @@ class MessagesIndex extends React.Component {
     
    
     render() {
-       
+        const emptyChat = <div className="empty-chat"><img src="https://i.ytimg.com/vi/tvD4fRHstuU/maxresdefault.jpg" /><h2>Just waiting for peeps&#8230;</h2></div>;
         return (
             <div className="messages-list-container">
                 <ul className="messages-list">
@@ -63,10 +63,11 @@ class MessagesIndex extends React.Component {
                         ))
                     }
                 </ul>
+                {this.props.match.params.channelId ? null : emptyChat}
             </div>
             
         )
     }
 }
 
-export default MessagesIndex
+export default withRouter(MessagesIndex)

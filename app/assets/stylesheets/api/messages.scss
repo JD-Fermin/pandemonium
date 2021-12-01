@@ -60,3 +60,12 @@ input[type=text]::placeholder {
     margin: 3px;
     transition: 0.2s;
 }
+
+.empty-chat > h2{
+    font-family: 'VT323', monospace;
+    font-size: 48px;
+    font-weight: normal;
+    letter-spacing: 0px;
+    text-align: center;
+    padding: 10px;
+}
