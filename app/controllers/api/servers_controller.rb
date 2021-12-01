@@ -17,6 +17,7 @@ class Api::ServersController < ApplicationController
     def create
         @server = Server.new(server_params)
         if @server.save
+            Channel.create(name: 'general', server_id: @server.id)
             render :show
         else
             render @server.errors.full_messages, status: 400
