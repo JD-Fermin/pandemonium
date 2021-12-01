@@ -17,6 +17,8 @@ class EditServerForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        this.props.update(this.state);
+        this.props.toggleForm();
     }
 
     render() {
