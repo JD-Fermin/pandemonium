@@ -18,7 +18,7 @@ class Chatbox extends React.Component {
         return(
             <div className="chatbox">
                     <MessagesIndexContainer />
-                    { this.props.location.pathname !== "/home" ? <CreateMessageContainer /> : null}
+                    { this.props.match.params.channelId ? <CreateMessageContainer /> : null}
             </div>
         )
         
