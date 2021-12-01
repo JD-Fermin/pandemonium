@@ -15,14 +15,14 @@ class ChannelItem extends React.Component {
     
     handleChannelClick() {
 
-        this.props.history.push(`/channels/${this.props.channel.id}`)
+        this.props.history.push(`/servers/${this.props.activeServerId}/channels/${this.props.channel.id}`)
     }
 
     handleDeleteClick(channelId) {
         return e => {
             e.stopPropagation();
             this.props.deleteChannel(channelId);
-            this.props.history.push("/home")
+            this.props.history.push(`/servers/${this.props.activeServerId}`)
         }
     }
     toggleButtons() {

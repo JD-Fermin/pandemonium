@@ -29,8 +29,8 @@ const _deleteChannel = (channelId) => ({
 
 
 
-export const fetchChannelList = () => (dispatch) => (
-    ChannelApi.list().then(channelList => dispatch(_fetchChannelList(channelList)))
+export const fetchChannelList = (serverId) => (dispatch) => (
+    ChannelApi.list(serverId).then(channelList => dispatch(_fetchChannelList(channelList)))
 )
 
 

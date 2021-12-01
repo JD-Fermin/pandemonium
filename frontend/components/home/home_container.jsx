@@ -8,7 +8,8 @@ import { withRouter } from "react-router";
 const mSTP = (state, ownProps) => ({
     users: Object.values(state.entities.users),
     currentUser: state.session.currentUser,
-    activeChannelId: ownProps.match.params.channelId
+    activeChannelId: ownProps.match.params.channelId,
+    activeServerId: ownProps.match.params.serverId
    
 })
 

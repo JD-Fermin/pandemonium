@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { createChannel, fetchChannelList } from "../../actions/channel_actions";
+import { createChannel } from "../../actions/channel_actions";
 
 class CreateChannelForm extends React.Component {
     constructor(props) {
@@ -19,7 +19,7 @@ class CreateChannelForm extends React.Component {
         this.props.create(this.state)
         this.setState({ name: '', description: '' })
         this.props.toggleForm();
-        this.props.fetchList();
+       
     }
     render(){
         return (
@@ -47,8 +47,7 @@ class CreateChannelForm extends React.Component {
 }
 
 const mDTP = dispatch => ({
-    create: channel => dispatch(createChannel(channel)),
-    fetchList: () => dispatch(fetchChannelList())
+    create: channel => dispatch(createChannel(channel))
 })
 
 export default connect(null, mDTP)(CreateChannelForm)

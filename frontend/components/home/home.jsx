@@ -15,12 +15,12 @@ class Home extends React.Component {
         return (
             <div className="home">
 
-                <ServerList />
+                <ServerList activeServerId={this.props.activeServerId} />
                 <div className="channel-bar">
                     <div className="server-title">
                         <h2>Active Server</h2>
                     </div>
-                    <ChannelList activeChannelId={this.props.activeChannelId} />
+                    <ChannelList activeChannelId={this.props.activeChannelId} activeServerId={this.props.activeServerId}/>
                     <div className="user-ops">
                         <h3>{this.props.currentUser.username}</h3>
                         <button className="button" onClick={this.props.logout}>Log Out</button>

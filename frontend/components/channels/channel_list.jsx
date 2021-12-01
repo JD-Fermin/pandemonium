@@ -14,7 +14,7 @@ class ChannelList extends React.Component {
         // this.refresh = new Date()
     }
     componentDidMount() {
-        this.props.fetchChannelList();
+        this.props.fetchChannelList(this.props.activeServerId);
     }
 
     toggleForm() {
@@ -29,6 +29,7 @@ class ChannelList extends React.Component {
     
 
     render() {
+        console.log(this.props.activeServerId)
         const channelList = this.props.channelList
         
         return (
@@ -42,10 +43,11 @@ class ChannelList extends React.Component {
                 {
                     channelList.map(channel => {
                         return <ChannelItem
-                            key={channel.id + channel.name}
+                            key={channel.id + channel.name + this.props.activeServerId}
                             channel={channel}
                             deleteChannel={this.props.deleteChannel}
                             activeChannelId={this.props.activeChannelId}
+                            activeServerId={this.props.activeServerId}
                             toggleForm={this.toggleForm}
                             toggleEdit={this.toggleEdit}
                         />
@@ -64,7 +66,7 @@ const mSTP = (state, ownProps) => ({
 
 const mDTP = (dispatch) => ({
 
-    fetchChannelList: () => dispatch(fetchChannelList()),
+    fetchChannelList: (id) => dispatch(fetchChannelList(id)),
     deleteChannel: (channelId) => dispatch(deleteChannel(channelId))
 })
 

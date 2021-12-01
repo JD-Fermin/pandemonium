@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { updateChannel, fetchChannelList } from "../../actions/channel_actions";
+import { updateChannel } from "../../actions/channel_actions";
 import { withRouter } from "react-router";
 class EditChannelForm extends React.Component {
     constructor(props) {
@@ -56,8 +56,7 @@ const mSTP = (state, ownProps) => ({
     channel: state.entities.channels[ownProps.match.params.channelId]
 })
 const mDTP = dispatch => ({
-    update: channel => dispatch(updateChannel(channel)),
-    fetchList: () => dispatch(fetchChannelList())
+    update: channel => dispatch(updateChannel(channel))
 })
 
 export default withRouter(connect(mSTP, mDTP)(EditChannelForm))

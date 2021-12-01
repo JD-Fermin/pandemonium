@@ -1,10 +1,12 @@
 export const ChannelApi = {
-    list: () => (
-        $.ajax({
+    list: async (serverId) => {
+        if (!serverId) return {};
+        const res = await $.ajax({
             method: 'GET',
-            url: 'api/channels'
-        }) 
-    ),
+            url: `api/servers/${serverId}/channels`
+        })
+        return res; 
+    },
     
     create: (channel) => (
         $.ajax({
