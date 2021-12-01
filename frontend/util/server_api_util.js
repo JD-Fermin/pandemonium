@@ -5,6 +5,13 @@ export const ServerApi = {
             url: 'api/servers'
         }) 
     ),
+
+    grab: (id) => (
+        $.ajax({
+            method: 'GET',
+            url: `api/servers/${id}`
+        }) 
+    ),
     
     create: (server) => (
         $.ajax({

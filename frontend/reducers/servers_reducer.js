@@ -1,4 +1,4 @@
-import { FETCH_SERVER_LIST, CREATE_SERVER, UPDATE_SERVER, DELETE_SERVER } from "../actions/server_actions";
+import { FETCH_SERVER_LIST, CREATE_SERVER, UPDATE_SERVER, DELETE_SERVER, FETCH_SERVER } from "../actions/server_actions";
 
 const initialState = {}
 
@@ -9,6 +9,8 @@ const serversReducer = (state = initialState, action) => {
     switch (action.type) {
         case FETCH_SERVER_LIST:
             return action.payload;
+        case FETCH_SERVER:
+
         case CREATE_SERVER:
             nextState[action.payload.id] = action.payload;
             return nextState;
