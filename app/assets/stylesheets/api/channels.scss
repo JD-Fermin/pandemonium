@@ -49,7 +49,7 @@
     justify-content: center;
     
 }
-.create-channel-modal {
+.create-channel-modal, .delete-channel-modal {
     position: fixed;
     
     // left: 30%;
@@ -84,3 +84,9 @@
 .delete-server {
     background: red;
 }
+
+.delete-channel-modal {
+    width: 500px;
+    height: 200px;
+}
+

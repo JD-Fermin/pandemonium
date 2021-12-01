@@ -2,13 +2,15 @@ import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { updateServer, deleteServer } from "../../actions/server_actions"
-
+import ServerDeletionConfirmation from "./server_deletion_confirmation";
 class EditServerForm extends React.Component {
     constructor(props) {
         super(props)
-        this.state = this.props.server
+        this.state = { ...this.props.server, deleting: false }
+        this.toggleDelete = this.toggleDelete.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
+        this.handleDelete = this.handleDelete.bind(this)
     }
 
     handleChange(field) {
@@ -21,9 +23,16 @@ class EditServerForm extends React.Component {
         this.props.toggleForm();
     }
 
+    toggleDelete() {
+       this.setState({deleting: !this.state.deleting})
+    }
+
+    handleDelete() {
+        
+    }
+
     render() {
-        return (
-            <div className="create-channel-modal">
+        let mainForm = <div className="create-channel-modal">
                 <h2>Server Settings</h2>
                 <form onSubmit={this.handleSubmit}>
                     <div>
@@ -42,9 +51,11 @@ class EditServerForm extends React.Component {
                     </div>
                         
                 </form>
-                <button className="delete-server" >Delete Server</button>
-               
+                <button className="delete-server" onClick={this.toggleDelete}>Delete Server</button>
+                
             </div>
+        return (
+                this.state.deleting ? <ServerDeletionConfirmation /> : mainForm 
         )
     }
 }
