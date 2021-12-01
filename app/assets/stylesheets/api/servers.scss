@@ -63,5 +63,11 @@
 }
 
 .server-settings {
-    color: #3a5311
+    color: #3a5311;
+    // transition: 0.2s;
+}
+
+.server-settings:hover {
+    cursor: pointer;
+    // transition: 0.2s;
 }
