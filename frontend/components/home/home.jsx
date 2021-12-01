@@ -21,7 +21,7 @@ class Home extends React.Component {
                         { this.props.activeServer ? <h2>{this.props.activeServer.name}</h2> : null}
                         
                     </div>
-                    <ChannelList activeChannelId={this.props.activeChannelId} activeServerId={this.props.activeServerId}/>
+                    <ChannelList activeChannelId={this.props.activeChannelId} activeServerId={this.props.activeServerId} activeServer={this.props.activeServer}/>
                     <div className="user-ops">
                         <h3>{this.props.currentUser.username}</h3>
                         <button className="button" onClick={this.props.logout}>Log Out</button>

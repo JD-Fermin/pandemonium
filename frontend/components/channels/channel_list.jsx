@@ -53,6 +53,8 @@ class ChannelList extends React.Component {
                             deleteChannel={this.props.deleteChannel}
                             activeChannelId={this.props.activeChannelId}
                             activeServerId={this.props.activeServerId}
+                            activeServer={this.props.activeServer}
+                            currentUser={this.props.currentUser}
                             toggleForm={this.toggleForm}
                             toggleEdit={this.toggleEdit}
                         />
@@ -66,7 +68,8 @@ class ChannelList extends React.Component {
 
 const mSTP = (state, ownProps) => ({
     location: ownProps.location,
-    channelList: Object.values(state.entities.channels)
+    channelList: Object.values(state.entities.channels),
+    currentUser: state.session.currentUser
 })
 
 const mDTP = (dispatch) => ({
