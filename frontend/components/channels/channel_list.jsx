@@ -26,12 +26,16 @@ class ChannelList extends React.Component {
     }
 
     
-    
+    componentDidUpdate(prevProps) {
+        if (prevProps.match.params.serverId !== this.props.match.params.serverId) {
+            this.props.fetchChannelList(this.props.activeServerId);
+        }
+    }
 
     render() {
-        console.log(this.props.activeServerId)
+       
         const channelList = this.props.channelList
-        
+        // if (channelList.length === 0) return null;
         return (
             <ul className="channel-list">
                 <div className="text-channels-header">TEXT CHANNELS
