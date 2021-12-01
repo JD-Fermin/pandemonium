@@ -74,9 +74,13 @@
     height: 18px;
 }
 
+.owner {
+    display: flex;
+    justify-content: space-between;
+}
 
 .users-list {
     width: 200px;
-    text-align: right;
+    text-align: left;
     padding: 10px;
 }

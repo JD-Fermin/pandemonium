@@ -43,7 +43,7 @@ class Home extends React.Component {
                                 <h3>Users</h3>
                                 {
                                     this.props.users.map((user) => (
-                                        <li key={user.id}>{this.props.activeServer && user.id === this.props.activeServer.ownerId ? <div className="owner"><img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/54/crown_1f451.png" className="owner-crown" /> {user.username}</div> : user.username}</li>
+                                        <li key={user.id}>{this.props.activeServer && user.id === this.props.activeServer.ownerId ? <div className="owner">{user.username}<img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/54/crown_1f451.png" className="owner-crown" /></div> : user.username}</li>
                                     ))
                                 }
                             </ul>
