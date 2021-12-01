@@ -5,7 +5,7 @@ import { createChannel } from "../../actions/channel_actions";
 class CreateChannelForm extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { name: '', description: '' }  
+        this.state = { name: '', description: '', server_id: this.props.activeServerId }  
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }

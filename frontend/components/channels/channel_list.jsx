@@ -36,8 +36,8 @@ class ChannelList extends React.Component {
             <ul className="channel-list">
                 <div className="text-channels-header">TEXT CHANNELS
                     <button onClick={this.toggleForm}>+</button>
-                    {this.state.openForm && !this.state.editing ? <div className="create-channel-container"><CreateChannelForm toggleForm={this.toggleForm} /></div> : null}
-                    {this.state.openForm && this.state.editing ? <div className="create-channel-container"><EditChannelForm toggleForm={this.toggleForm} toggleEdit={this.toggleEdit} /></div> : null}
+                    {this.state.openForm && !this.state.editing ? <div className="create-channel-container"><CreateChannelForm toggleForm={this.toggleForm} activeServerId={this.props.activeServerId}/></div> : null}
+                    {this.state.openForm && this.state.editing ? <div className="create-channel-container"><EditChannelForm toggleForm={this.toggleForm} toggleEdit={this.toggleEdit} activeServerId={this.props.activeServerId}/></div> : null}
 
                 </div>
                 {
