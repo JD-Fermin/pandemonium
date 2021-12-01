@@ -31,6 +31,7 @@
     font-size: 24px;
     font-weight: normal;
     letter-spacing: 0px;
+    text-align: left;
 }
 
 .home {
@@ -68,3 +69,14 @@
     cursor: pointer;
 }
 
+.owner-crown {
+    width: 18px;
+    height: 18px;
+}
+
+
+.users-list {
+    width: 200px;
+    text-align: right;
+    padding: 10px;
+}
