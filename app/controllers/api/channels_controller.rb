@@ -1,7 +1,8 @@
 class Api::ChannelsController < ApplicationController
     def index
         # TODO: this will change to get channel by server
-        @channels = Channel.all
+        @server = Server.find_by(id: params[:server_id])
+        @channels = @server.channels
         render :index
     end
 
@@ -46,4 +47,5 @@ class Api::ChannelsController < ApplicationController
     def channel_params
         params.require(:channel).permit(:name, :description, :server_id)
     end
+
 end
