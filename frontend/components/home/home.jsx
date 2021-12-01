@@ -6,19 +6,20 @@ import ServerList from "../servers/server_list"
 class Home extends React.Component {
     componentDidMount() {
         this.props.fetchUsers();
-        this.props.fetchServer(this.props.activeServerId)
+        { this.props.activeServerId ? this.props.fetchServer(this.props.activeServerId) : null}
     }
     render() {
         if (!this.props.currentUser) return null;
         if (this.props.users.length === 0) return null;
-        if (!this.props.activeServer) return null;
+        // if (!this.props.activeServer) return null;
         return (
             <div className="home">
 
                 <ServerList activeServerId={this.props.activeServerId} />
                 <div className="channel-bar">
                     <div className="server-title">
-                        <h2>{this.props.activeServer.name}</h2>
+                        { this.props.activeServer ? <h2>{this.props.activeServer.name}</h2> : null}
+                        
                     </div>
                     <ChannelList activeChannelId={this.props.activeChannelId} activeServerId={this.props.activeServerId}/>
                     <div className="user-ops">

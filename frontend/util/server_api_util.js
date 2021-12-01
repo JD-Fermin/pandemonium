@@ -6,12 +6,15 @@ export const ServerApi = {
         }) 
     ),
 
-    grab: (id) => (
-        $.ajax({
+    grab: async (id) => {
+        if (!id) return {};
+        const res = await $.ajax({
             method: 'GET',
             url: `api/servers/${id}`
         }) 
-    ),
+
+        return res;
+    },
     
     create: (server) => (
         $.ajax({

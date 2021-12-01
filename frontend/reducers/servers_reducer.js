@@ -10,7 +10,8 @@ const serversReducer = (state = initialState, action) => {
         case FETCH_SERVER_LIST:
             return action.payload;
         case FETCH_SERVER:
-
+            nextState[action.payload.id] = action.payload;
+            return nextState;
         case CREATE_SERVER:
             nextState[action.payload.id] = action.payload;
             return nextState;
