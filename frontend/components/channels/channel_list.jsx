@@ -36,7 +36,7 @@ class ChannelList extends React.Component {
        
         const channelList = this.props.channelList
         // if (channelList.length === 0) return null;
-        const channelHead = <><p>TEXT CHANNELS</p><button onClick={this.toggleForm}>+</button></>;
+        const channelHead = <><p>TEXT CHANNELS</p>{this.props.activeServer && this.props.currentUser.id === this.props.activeServer.ownerId ? <button onClick={this.toggleForm}>+</button> : null}</>;
         return (
             <ul className="channel-list">
                 <div className="text-channels-header">

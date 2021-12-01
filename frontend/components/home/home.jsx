@@ -18,7 +18,7 @@ class Home extends React.Component {
                 <ServerList activeServerId={this.props.activeServerId} />
                 <div className="channel-bar">
                     <ServerHeader activeServer={this.props.activeServer} currentUser={this.props.currentUser} />
-                    <ChannelList activeChannelId={this.props.activeChannelId} activeServerId={this.props.activeServerId} activeServer={this.props.activeServer}/>
+                    <ChannelList activeChannelId={this.props.activeChannelId} activeServerId={this.props.activeServerId} activeServer={this.props.activeServer} currentUser={this.props.currentUser}/>
                     <div className="user-ops">
                         <h3>{this.props.currentUser.username}</h3>
                         <button className="button" onClick={this.props.logout}>Log Out</button>
