@@ -23,16 +23,25 @@ User.create(
     password: "password"
 )
 
+Server.create(
+    name: "Da Cultured Chaps",
+    description: "place of cultured gentlechaps",
+    owner_id: 3
+)
+
 Channel.create(
-    name: "general"
+    name: "general",
+    server_id: 1
 )
 
 Channel.create(
     name: "nerdery",
-    description: "Place for the geeks"
+    description: "Place for the geeks",
+    server_id: 1
 )
 
 Channel.create(
     name: "nunnery",
-    description: "Place for the devouts"
+    description: "Place for the devouts",
+    server_id: 1
 )
