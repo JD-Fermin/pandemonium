@@ -73,7 +73,14 @@
 
 .create-channel-buttons {
     padding: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 
+.name-input, .description-input {
+    width: 100%;
+}
 
-
+.delete-server {
+    background: red;
+}
