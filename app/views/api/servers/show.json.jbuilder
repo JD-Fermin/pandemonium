@@ -1,1 +1,1 @@
-json.extract! @server, :id, :name, :description
+json.extract! @server, :id, :name, :description, :owner_id

@@ -19,7 +19,7 @@ class Home extends React.Component {
                 <div className="channel-bar">
                     <div className="server-title">
                         { this.props.activeServer ? <h2>{this.props.activeServer.name}</h2> : null}
-                        
+                        { this.props.activeServer && this.props.currentUser.id === this.props.activeServer.ownerId ? <span className="server-settings">⚙︎</span> : null }
                     </div>
                     <ChannelList activeChannelId={this.props.activeChannelId} activeServerId={this.props.activeServerId} activeServer={this.props.activeServer}/>
                     <div className="user-ops">
