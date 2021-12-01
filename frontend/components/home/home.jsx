@@ -3,6 +3,7 @@ import ChannelList from "../channels/channel_list";
 import ChannelHeader from "../channels/channel_header"
 import Chatbox from "../messages/chatbox";
 import ServerList from "../servers/server_list"
+import ServerHeader from "../servers/server_header"
 class Home extends React.Component {
     componentDidMount() {
         this.props.fetchUsers();
@@ -14,13 +15,9 @@ class Home extends React.Component {
         // if (!this.props.activeServer) return null;
         return (
             <div className="home">
-
                 <ServerList activeServerId={this.props.activeServerId} />
                 <div className="channel-bar">
-                    <div className="server-title">
-                        { this.props.activeServer ? <h2>{this.props.activeServer.name}</h2> : null}
-                        { this.props.activeServer && this.props.currentUser.id === this.props.activeServer.ownerId ? <span className="server-settings">⚙︎</span> : null }
-                    </div>
+                    <ServerHeader activeServer={this.props.activeServer} currentUser={this.props.currentUser} />
                     <ChannelList activeChannelId={this.props.activeChannelId} activeServerId={this.props.activeServerId} activeServer={this.props.activeServer}/>
                     <div className="user-ops">
                         <h3>{this.props.currentUser.username}</h3>
