@@ -19,16 +19,17 @@ class EditServerForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.update(this.state);
+        this.props.update({id: this.state.id, name: this.state.name, description: this.state.description});
         this.props.toggleForm();
     }
 
     toggleDelete() {
        this.setState({deleting: !this.state.deleting})
+
     }
 
     handleDelete() {
-        
+        this.props.toggleForm()
     }
 
     render() {
@@ -55,7 +56,7 @@ class EditServerForm extends React.Component {
                 
             </div>
         return (
-                this.state.deleting ? <ServerDeletionConfirmation /> : mainForm 
+                this.state.deleting ? <ServerDeletionConfirmation delete={this.handleDelete} toggleDelete={this.toggleDelete}  /> : mainForm 
         )
     }
 }

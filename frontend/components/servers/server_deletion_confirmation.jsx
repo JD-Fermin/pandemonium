@@ -9,7 +9,9 @@ class ServerDeletionConfirmation extends React.Component {
         return(
             
                 <div className="delete-channel-modal">
-                    DELETED
+                    Do you reaaally want to delete this server?
+                    <button className="delete-server">Yes</button>
+                    <button onClick={this.props.toggleDelete}>No</button>
                 </div>
         
         )
