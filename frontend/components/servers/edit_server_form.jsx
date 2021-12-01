@@ -29,7 +29,9 @@ class EditServerForm extends React.Component {
     }
 
     handleDelete() {
+        this.props.delete(this.props.server.id)
         this.props.toggleForm()
+        this.props.history.push('/home')
     }
 
     render() {
@@ -67,6 +69,6 @@ const mDTP = (dispatch) => ({
     delete: (serverId) => dispatch(deleteServer(serverId))
 })
 
-export default connect(null, mDTP)(EditServerForm)
+export default withRouter(connect(null, mDTP)(EditServerForm))
 
 
