@@ -8,7 +8,7 @@ import { fetchServer } from "../../actions/server_actions";
 const mSTP = (state, ownProps) => ({
     currentUser: state.session.currentUser,
     activeChannelId: ownProps.match.params.channelId,
-    activeServerId: ownProps.match.params.serverId,
+    // activeServerId: ownProps.match.params.serverId,
     activeServer: state.entities.servers[ownProps.match.params.serverId]
    
 })

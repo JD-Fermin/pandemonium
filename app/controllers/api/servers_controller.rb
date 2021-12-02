@@ -2,7 +2,8 @@ class Api::ServersController < ApplicationController
     def index
         # TODO: this will change to get channel by server
         if params[:user_id]
-            @servers = User.find(id: params[:user_id]).servers
+            @user = User.find_by(id: params[:user_id])
+            @servers = @user.joined_servers
         else
             @servers = Server.all
         end

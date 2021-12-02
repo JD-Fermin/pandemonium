@@ -5,11 +5,12 @@ import Chatbox from "../messages/chatbox";
 import ServerList from "../servers/server_list"
 import ServerHeader from "../servers/server_header"
 import UserList from "../users/user_list"
+import { withRouter } from "react-router";
 class Home extends React.Component {
     componentDidMount() {
         //  this.props.fetchUsers();
         //  { this.props.activeServerId ? this.props.fetchUsers(this.props.activeServerId) : this.props.fetchUsers() }
-        { this.props.activeServerId ? this.props.fetchServer(this.props.activeServerId) : null}
+        { this.props.match.params.serverId ? this.props.fetchServer(this.props.match.params.serverId ) : null}
     }
     render() {
         if (!this.props.currentUser) return null;
@@ -17,10 +18,10 @@ class Home extends React.Component {
         // if (!this.props.activeServer) return null;
         return (
             <div className="home">
-                <ServerList activeServerId={this.props.activeServerId} />
+                <ServerList />
                 <div className="channel-bar">
                     <ServerHeader activeServer={this.props.activeServer} currentUser={this.props.currentUser} />
-                    <ChannelList activeChannelId={this.props.activeChannelId} activeServerId={this.props.activeServerId} activeServer={this.props.activeServer} currentUser={this.props.currentUser}/>
+                    <ChannelList activeChannelId={this.props.activeChannelId} activeServerId={this.props.match.params.serverId } activeServer={this.props.activeServer} currentUser={this.props.currentUser}/>
                     <div className="user-ops">
                         <h3>{this.props.currentUser.username}</h3>
                         <button className="button" onClick={this.props.logout}>Log Out</button>
@@ -42,4 +43,4 @@ class Home extends React.Component {
     }
 }
 
-export default Home
+export default withRouter(Home)

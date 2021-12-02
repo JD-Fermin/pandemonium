@@ -34,8 +34,8 @@ const _deleteServer = (serverId) => ({
 
 
 
-export const fetchServerList = () => (dispatch) => (
-    ServerApi.list().then(serverList => dispatch(_fetchServerList(serverList)))
+export const fetchServerList = (userId) => (dispatch) => (
+    ServerApi.list(userId).then(serverList => dispatch(_fetchServerList(serverList)))
 )
 
 export const fetchServer = (id) => (dispatch) => (

@@ -1,8 +1,9 @@
 export const ServerApi = {
-    list: () => (
+    list: (userId) => (
         $.ajax({
             method: 'GET',
-            url: 'api/servers'
+            url: 'api/servers',
+            data: { user_id: userId }
         }) 
     ),
 

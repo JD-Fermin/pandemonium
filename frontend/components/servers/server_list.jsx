@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { fetchServerList } from "../../actions/server_actions";
 import ServerListItem from "../servers/server_list_item"
 import CreateServerForm from "./create_server_form"
+import { withRouter } from "react-router";
 class ServerList extends React.Component {
     constructor(props) {
         super(props)
@@ -11,7 +12,7 @@ class ServerList extends React.Component {
         this.toggleEdit = this.toggleEdit.bind(this)
     }
     componentDidMount() {
-        this.props.fetchServerList()
+        this.props.fetchServerList(this.props.currentUser.id)
     }
 
     toggleForm() {
@@ -40,12 +41,13 @@ class ServerList extends React.Component {
 }
 
 const mSTP = (state) => ({
-    servers: Object.values(state.entities.servers)
+    servers: Object.values(state.entities.servers),
+    currentUser: state.session.currentUser
 })
 
 const mDTP = (dispatch) => ({
-    fetchServerList: () => dispatch(fetchServerList())
+    fetchServerList: (id) => dispatch(fetchServerList(id))
 })
 
 
-export default connect(mSTP, mDTP)(ServerList)
+export default withRouter(connect(mSTP, mDTP)(ServerList))
