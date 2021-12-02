@@ -26,7 +26,7 @@ class ServerIndex extends React.Component {
         return <div className="random-servers-container">
             {
                 this.props.servers.map((server) => (
-                        <div key={server.name + server.id}className="random-server-item" onClick={() => this.handleClick(server.id)}>
+                        <div key={server.name + server.id} className={this.props.joinedServers[server.id] !== undefined ? "joined random-server-item" : "random-server-item"} onClick={() => this.handleClick(server.id)}>
                             <h3>{server.name}</h3>
                             <p>{server.description}</p>
                         </div>

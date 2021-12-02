@@ -89,7 +89,7 @@
 }
 
 .random-server-item {
-    background-color: #40916C;
+    background-color: #74C69D;
     border-radius: 5%;
     height: 215px;
     width: 215px;
@@ -111,10 +111,15 @@
     // transition: 0.3s;
 }
 
-.random-server-item:hover {
+.random-server-item:hover, .joined.random-server-item:hover {
     transition: 0.2s;
     cursor: pointer;
     transform: translate(-5px, -5px);
     box-shadow: 5px 5px black;
+}
+
+.joined.random-server-item:hover {
+    transition: 0.2s;
+    background-color: #40916C;
 }
 
