@@ -29,7 +29,7 @@ class ServerList extends React.Component {
             <ul className='server-list'>
                 {
                     this.props.servers.map((server) => (
-                        <ServerListItem key={server.id + server.name} server={server} activeServerId={this.props.activeServerId} />
+                        <ServerListItem key={server.id + server.name} server={server} activeServerId={this.props.match.params.serverId} />
                     ))
                 }
                 <li onClick={this.toggleForm} className="server-create">&#10011;</li>
