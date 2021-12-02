@@ -80,3 +80,27 @@
 .server.title.header {
     text-overflow: ellipsis;
 }
+
+.random-servers-container {
+    display: grid;
+    gap: 5%;
+    padding: 10px;
+}
+
+.random-server-item {
+    background-color: #40916C;
+    border-radius: 5%;
+    height: 215px;
+    width: 215px;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'VT323', monospace;
+    font-weight: normal;
+    letter-spacing: -0.5px;
+}
+
+.random-server-item > p {
+    font-size: 24px;
+    letter-spacing: -1.5px;
+}
