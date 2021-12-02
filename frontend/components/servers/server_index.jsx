@@ -1,11 +1,24 @@
 import React from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router";
 import { fetchRandomServerList } from "../../actions/server_actions";
+withRouter
 
 class ServerIndex extends React.Component {
+    constructor(props) {
+        super(props)
+    }
 
     componentDidMount() {
         this.props.fetchRandomServers()
+    }
+
+    handleClick(serverId) {
+        if (this.props.joinedServers[serverId] !== undefined) {
+            this.props.history.push(`/servers/${serverId}`)
+        } else {
+            console.log('Joined!')
+        }
     }
 
     render() {
@@ -13,7 +26,7 @@ class ServerIndex extends React.Component {
         return <div className="random-servers-container">
             {
                 this.props.servers.map((server) => (
-                        <div key={server.name + server.id}className="random-server-item">
+                        <div key={server.name + server.id}className="random-server-item" onClick={() => this.handleClick(server.id)}>
                             <h3>{server.name}</h3>
                             <p>{server.description}</p>
                         </div>
@@ -24,11 +37,14 @@ class ServerIndex extends React.Component {
 }
 
 const mSTP = (state) => ({
-    servers: Object.values(state.entities.randomServers)
+    servers: Object.values(state.entities.randomServers),
+    joinedServers: state.entities.servers,
+    currentUserId: state.session.currentUser.id
 })
 
 const mDTP = (dispatch) => ({
+    // fetchJoinedServers: (i
     fetchRandomServers: () => dispatch(fetchRandomServerList())
 })
 
-export default connect(mSTP, mDTP)(ServerIndex)
+export default withRouter(connect(mSTP, mDTP)(ServerIndex))

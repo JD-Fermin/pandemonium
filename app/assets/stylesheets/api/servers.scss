@@ -99,9 +99,22 @@
     font-family: 'VT323', monospace;
     font-weight: normal;
     letter-spacing: -0.5px;
+    transition: 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .random-server-item > p {
     font-size: 24px;
     letter-spacing: -1.5px;
+    // transition: 0.3s;
 }
+
+.random-server-item:hover {
+    transition: 0.2s;
+    cursor: pointer;
+    transform: translate(-5px, -5px);
+    box-shadow: 5px 5px black;
+}
+

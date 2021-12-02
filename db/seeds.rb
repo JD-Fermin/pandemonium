@@ -157,7 +157,7 @@ Channel.create(
 
 Server.create(
     name: "Coffee Lovers Club",
-    description: "Gathering of the coffe aficionados",
+    description: "Gathering of the coffee aficionados",
     owner_id: 6
 )
 
@@ -259,5 +259,60 @@ Channel.create(
     name: "general",
     server_id: 9
 )
+
+#10
+
+Server.create(
+    name: "Pilots of Giant Steel",
+    description: "the future is here",
+    owner_id: 4
+)
+
+Membership.create(
+    user_id: 4,
+    server_id: 10
+)
+
+Channel.create(
+    name: "general",
+    server_id: 10
+)
+
+#11
+
+Server.create(
+    name: "Sauce life",
+    description: "daily dose of sauce",
+    owner_id: 3
+)
+
+Membership.create(
+    user_id: 3,
+    server_id: 11
+)
+
+Channel.create(
+    name: "general",
+    server_id: 11
+)
+
+#12
+
+Server.create(
+    name: "Captain of the Rails",
+    description: "For those who brave the frontier",
+    owner_id: 1
+)
+
+Membership.create(
+    user_id: 1,
+    server_id: 12
+)
+
+Channel.create(
+    name: "general",
+    server_id: 12
+)
+
 
 
