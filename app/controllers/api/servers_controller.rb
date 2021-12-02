@@ -5,7 +5,7 @@ class Api::ServersController < ApplicationController
             @user = User.find_by(id: params[:user_id])
             @servers = @user.joined_servers
         else
-            @servers = Server.all
+            @servers = Server.order("RANDOM()").limit(9).to_a
         end
         render :index
     end
