@@ -5,17 +5,20 @@ import Chatbox from "../messages/chatbox";
 import ServerList from "../servers/server_list"
 import ServerHeader from "../servers/server_header"
 import UserList from "../users/user_list"
+import ServerIndex from "./../servers/server_index"
 import { withRouter } from "react-router";
 class Home extends React.Component {
+
+    
+    
+
     componentDidMount() {
-        //  this.props.fetchUsers();
-        //  { this.props.activeServerId ? this.props.fetchUsers(this.props.activeServerId) : this.props.fetchUsers() }
         { this.props.match.params.serverId ? this.props.fetchServer(this.props.match.params.serverId ) : null}
     }
     render() {
         if (!this.props.currentUser) return null;
-        // if (this.props.users.length === 0) return null;
-        // if (!this.props.activeServer) return null;
+        let chatbox = <><Chatbox /><UserList activeServer={this.props.activeServer} /></>;
+        let serverIndex = <ServerIndex />
         return (
             <div className="home">
                 <ServerList />
@@ -33,8 +36,7 @@ class Home extends React.Component {
                         <ChannelHeader activeChannelId={this.props.activeChannelId} />
                     </nav>
                     <div className="chatbox-outer">
-                        <Chatbox />
-                        <UserList activeServer={this.props.activeServer} />
+                        {this.props.match.path === "/discover" ? serverIndex : chatbox}
                     </div>
 
                 </div>
