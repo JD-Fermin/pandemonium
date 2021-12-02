@@ -33,6 +33,7 @@ class ServerList extends React.Component {
                     ))
                 }
                 <li onClick={this.toggleForm} className="server-create">&#10011;</li>
+                <li className="server-create"><img className="server-explore" src="https://hotemoji.com/images/dl/b/compass-emoji-by-twitter.png" /></li>
             </ul>
             {this.state.openForm && !this.state.editing ? <div className="create-channel-container"><CreateServerForm toggleForm={this.toggleForm} /></div> : null}
 
