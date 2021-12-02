@@ -21,7 +21,8 @@ class Api::UsersController < ApplicationController
 
   def index
     if params[:server_id]
-      @users = Server.find(id: :server_id).members
+      @server = Server.find_by(id: params[:server_id])
+      @users = @server.members
     else
       @users = User.all
     end

@@ -5,7 +5,7 @@ class Server < ApplicationRecord
 
     belongs_to :owner, class_name: :User, foreign_key: :owner_id
     has_many :channels, class_name: :Channel, foreign_key: :server_id, dependent: :destroy
-    has_many :memberships, class_name: :Memberships, foreign_key: :server_id, dependent: :destroy
+    has_many :memberships, class_name: :Membership, foreign_key: :server_id, dependent: :destroy
     has_many :members, through: :memberships, source: :user
     
     def transfer_ownership(user)

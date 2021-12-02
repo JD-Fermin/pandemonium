@@ -21,7 +21,7 @@ export const fetchUser = (id) => (dispatch) => (
     APIUtil.fetchUser(id).then(res => dispatch(receiveUser(res)))
 )
 
-export const fetchUsers = () => dispatch => {
+export const fetchUsers = (serverId) => dispatch => {
 
-    return APIUtil.fetchUsers().then(res => dispatch(receiveUsers(res)))
+    return APIUtil.fetchUsers(serverId).then(res => dispatch(receiveUsers(res)))
 }

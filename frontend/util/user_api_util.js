@@ -6,9 +6,10 @@ export const fetchUser= id => (
   })
 );
 
-export const fetchUsers = () => (
+export const fetchUsers = (serverId) => (
   $.ajax({
     method: 'GET',
-    url: '/api/users'
+    url: '/api/users',
+    data: { server_id: serverId }
   })
 );

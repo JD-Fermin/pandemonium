@@ -29,6 +29,22 @@ Server.create(
     owner_id: 3
 )
 
+Membership.create(
+    user_id: 3,
+    server_id: 1
+)
+
+Server.create(
+    name: "Students of Schale",
+    description: "sensei simps",
+    owner_id: 2
+)
+
+Membership.create(
+    user_id: 2,
+    server_id: 2
+)
+
 Channel.create(
     name: "general",
     server_id: 1
@@ -44,4 +60,14 @@ Channel.create(
     name: "nunnery",
     description: "Place for the devouts",
     server_id: 1
+)
+
+Membership.create(
+    user_id: 1,
+    server_id: 1
+)
+
+Channel.create(
+    name: "general",
+    server_id: 2
 )

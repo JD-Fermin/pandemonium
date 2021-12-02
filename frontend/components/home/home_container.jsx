@@ -16,7 +16,7 @@ const mSTP = (state, ownProps) => ({
 })
 
 const mDTP = (dispatch) => ({
-    fetchUsers: () => dispatch(fetchUsers()),
+    fetchUsers: (serverId) => dispatch(fetchUsers(serverId)),
     fetchServer: (id) => dispatch(fetchServer(id)),
     logout: () => dispatch(logout())
 })
