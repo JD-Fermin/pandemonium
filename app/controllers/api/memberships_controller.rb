@@ -8,11 +8,17 @@ class Api::MembershipsController < ApplicationController
         end
     end
 
-    # def destroy
-    #     @membership = Membership.find_by(user_id: params[:membership][:user_id], server_id: params[:membership][:server_id])
-    #     @membership.destroy
-    #     render :show
-    # end
+    def index
+        @user = User.find_by(id: params[:user_id])
+        @memberships = @user.memberships
+        render :index
+    end
+    
+    def destroy
+        @membership = Membership.find_by(id: params[:id])
+        @membership.destroy
+        render :show
+    end
     
     
     private

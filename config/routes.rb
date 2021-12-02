@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :api, defaults: {format: :json} do
     resource :session, only: [:create, :destroy]
-    resources :users, only: [:index, :show, :create]
+    resources :users, only: [:index, :show, :create] do 
+      resources :memberships, only: [:index, :destroy]
+    end
 
     resources :servers, only: [:index, :create, :update, :destroy, :show] do
       resources :channels, only: [:index]
@@ -11,6 +13,9 @@ Rails.application.routes.draw do
     resources :channels, only: [:update, :create, :destroy] do
       resources :messages, except: [:edit, :new, :show] 
     end
+
+
+
 
     resources :memberships, only: [:create]
   end
