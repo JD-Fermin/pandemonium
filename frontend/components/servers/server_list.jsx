@@ -24,7 +24,7 @@ class ServerList extends React.Component {
     }
 
     render() {
-        if (this.props.servers.length === 0) return null;
+        // if (this.props.servers.length === 0) return null;
         return <div className="server-bar">
             <ul className='server-list'>
                 {
