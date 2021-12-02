@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       resources :messages, except: [:edit, :new, :show] 
     end
 
-    resources :memberships, only: [:create, :destroy]
+    resources :memberships, only: [:create]
   end
   root to: "static_pages#root"
   mount ActionCable.server, at: '/cable'
