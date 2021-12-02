@@ -85,6 +85,7 @@
     display: grid;
     gap: 5%;
     padding: 10px;
+    grid-template-columns: auto auto auto;
 }
 
 .random-server-item {
