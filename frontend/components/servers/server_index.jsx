@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { fetchRandomServerList } from "../../actions/server_actions";
+import { createMembership } from "../../actions/membership_actions";
+import { fetchRandomServerList, fetchServerList } from "../../actions/server_actions";
 withRouter
 
 class ServerIndex extends React.Component {
@@ -17,7 +18,9 @@ class ServerIndex extends React.Component {
         if (this.props.joinedServers[serverId] !== undefined) {
             this.props.history.push(`/servers/${serverId}`)
         } else {
-            console.log('Joined!')
+            this.props.join({ user_id: this.props.currentUserId, server_id: serverId })
+            // this.props.fetchJoinedServers(this.props.currentUserId)
+            this.props.history.push(`/servers/${serverId}`)
         }
     }
 
@@ -43,8 +46,9 @@ const mSTP = (state) => ({
 })
 
 const mDTP = (dispatch) => ({
-    // fetchJoinedServers: (i
-    fetchRandomServers: () => dispatch(fetchRandomServerList())
+    join: (membership) => dispatch(createMembership(membership)) ,
+    fetchRandomServers: () => dispatch(fetchRandomServerList()),
+    fetchJoinedServers: (id) => dispatch(fetchServerList(id))
 })
 
 export default withRouter(connect(mSTP, mDTP)(ServerIndex))

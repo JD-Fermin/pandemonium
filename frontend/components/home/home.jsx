@@ -15,6 +15,7 @@ class Home extends React.Component {
     componentDidMount() {
         { this.props.match.params.serverId ? this.props.fetchServer(this.props.match.params.serverId ) : null}
     }
+    
     render() {
         if (!this.props.currentUser) return null;
         let chatbox = <><Chatbox /><UserList activeServer={this.props.activeServer} /></>;

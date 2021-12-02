@@ -24,7 +24,13 @@ class ServerList extends React.Component {
         this.setState({ editing: this.state.editing ? false : true })
     }
 
-    
+    componentDidUpdate(prevProps) {
+        
+        if (prevProps.match.params.serverId !== this.props.match.params.serverId) {
+            this.props.fetchServerList(this.props.currentUser.id)
+        }
+    }
+
 
     render() {
         // if (this.props.servers.length === 0) return null;
