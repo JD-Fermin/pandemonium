@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :channels, only: [:update, :create, :destroy] do
       resources :messages, except: [:edit, :new, :show] 
     end
+
+    resources :memberships, only: [:create, :destroy]
   end
   root to: "static_pages#root"
   mount ActionCable.server, at: '/cable'

@@ -20,7 +20,11 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    if params[:server_id]
+      @users = Server.find(id: :server_id).members
+    else
+      @users = User.all
+    end
     render :index
   end
 

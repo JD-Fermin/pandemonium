@@ -14,6 +14,8 @@ class User < ApplicationRecord
 
   has_many :memberships, class_name: :Membership, foreign_key: :user_id
 
+  has_many :joined_servers, through: :memberships, source: :server
+
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     if user && user.is_valid_password?(password)

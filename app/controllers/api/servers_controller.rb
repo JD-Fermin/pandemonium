@@ -1,7 +1,11 @@
 class Api::ServersController < ApplicationController
     def index
         # TODO: this will change to get channel by server
-        @servers = Server.all
+        if params[:user_id]
+            @servers = User.find(id: params[:user_id]).servers
+        else
+            @servers = Server.all
+        end
         render :index
     end
 
@@ -18,6 +22,7 @@ class Api::ServersController < ApplicationController
         @server = Server.new(server_params)
         if @server.save
             Channel.create(name: 'general', server_id: @server.id)
+            Membership.create(user_id: @server.owner_id, server_id: @server.id)
             render :show
         else
             render @server.errors.full_messages, status: 400
