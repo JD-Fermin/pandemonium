@@ -1,9 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchServerList } from "../../actions/server_actions";
+import { fetchRandomServerList } from "../../actions/server_actions";
 import ServerListItem from "../servers/server_list_item"
 class ServerIndex extends React.Component {
 
+    componentDidMount() {
+        this.props.fetchRandomServers()
+    }
    
     render() {
         if (Object.keys(this.props.servers).length === 0) return null;
@@ -18,11 +21,11 @@ class ServerIndex extends React.Component {
 }
 
 const mSTP = (state) => ({
-    servers: {}
+    servers: Object.values(state.entities.randomServers)
 })
 
 const mDTP = (dispatch) => ({
-    fetchServers: () => dispatch(fetchServerList())
+    fetchRandomServers: () => dispatch(fetchRandomServerList())
 })
 
 export default connect(mSTP, mDTP)(ServerIndex)
