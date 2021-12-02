@@ -4,6 +4,7 @@ import { fetchServerList } from "../../actions/server_actions";
 import ServerListItem from "../servers/server_list_item"
 import CreateServerForm from "./create_server_form"
 import { withRouter } from "react-router";
+import { fetchUserMemberships } from "../../actions/membership_actions";
 class ServerList extends React.Component {
     constructor(props) {
         super(props)
@@ -13,6 +14,7 @@ class ServerList extends React.Component {
     }
     componentDidMount() {
         this.props.fetchServerList(this.props.currentUser.id)
+        this.props.fetchUserMemberships(this.props.currentUser.id)
     }
 
     toggleForm(e) {
@@ -28,6 +30,9 @@ class ServerList extends React.Component {
         
         if (prevProps.match.params.serverId !== this.props.match.params.serverId) {
             this.props.fetchServerList(this.props.currentUser.id)
+            this.props.fetchUserMemberships(this.props.currentUser.id)
+
+
         }
     }
 
@@ -52,11 +57,13 @@ class ServerList extends React.Component {
 
 const mSTP = (state) => ({
     servers: Object.values(state.entities.servers),
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser, 
+    memberships: state.entities.memberships
 })
 
 const mDTP = (dispatch) => ({
-    fetchServerList: (id) => dispatch(fetchServerList(id))
+    fetchServerList: (id) => dispatch(fetchServerList(id)),
+    fetchUserMemberships: (id) => dispatch(fetchUserMemberships(id))
 })
 
 
