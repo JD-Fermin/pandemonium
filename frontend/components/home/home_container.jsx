@@ -1,13 +1,11 @@
 import { connect } from "react-redux";
 import { logout } from "../../actions/session_actions";
-import { fetchUsers } from "../../actions/user_actions";
 import Home from "./home";
 import { withRouter } from "react-router";
 import { fetchServer } from "../../actions/server_actions";
 
 
 const mSTP = (state, ownProps) => ({
-    users: Object.values(state.entities.users),
     currentUser: state.session.currentUser,
     activeChannelId: ownProps.match.params.channelId,
     activeServerId: ownProps.match.params.serverId,
@@ -16,7 +14,6 @@ const mSTP = (state, ownProps) => ({
 })
 
 const mDTP = (dispatch) => ({
-    fetchUsers: (serverId) => dispatch(fetchUsers(serverId)),
     fetchServer: (id) => dispatch(fetchServer(id)),
     logout: () => dispatch(logout())
 })
