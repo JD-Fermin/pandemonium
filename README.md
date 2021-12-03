@@ -12,4 +12,9 @@ Pandemonium is a messaging app where users with similar interests can talk withi
 - Rails ActionCable (web sockets)
 - HTML with SCSS
 
-## 
+## Future Plans
+- implement direct messaging
+- add websockets for server meberships
+- modify the CSS for more similarity
+- implement user update name and delete
+- implement leave server
