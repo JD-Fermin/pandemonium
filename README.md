@@ -1,24 +1,15 @@
 # Pandemonium
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Pandemonium is a messaging app where users with similar interests can talk within their own servers. This is a clone of the popular app Discord.
 
-Things you may want to cover:
+[Live Site](https://pandemonium-v01.herokuapp.com/#/)
 
-* Ruby version
+## Technologies Used
+- Ruby 2.7.2
+- Rails 5.2.6
+-  Node v10.13.0 (JavaScript, React, Redux)
+- Postgresql 14
+- Rails ActionCable (web sockets)
+- HTML with SCSS
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 
