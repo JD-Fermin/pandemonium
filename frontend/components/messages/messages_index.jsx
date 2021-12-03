@@ -1,6 +1,7 @@
 import React from 'react'
 import MessagesIndexItem from './messages_index_item'
 import { withRouter } from 'react-router'
+import { fetchUsers } from '../../actions/user_actions'
 
 // const em = new EventEmitter()
 class MessagesIndex extends React.Component {
@@ -24,6 +25,7 @@ class MessagesIndex extends React.Component {
             },
             {
                 received: (data) => {
+                    fetchUsers(this.props.match.params.serverId)
                     fetchMessages(activeChannelId) 
                 }
             }
