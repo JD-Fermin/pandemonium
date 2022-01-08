@@ -14,4 +14,13 @@ export const fetchUserMemberships = async (userId) => {
     })
     return res;
 }
+
+export const deleteMembership = async (membershipId) => {
+    if (!membershipId) return {}
+    const res = await $.ajax({
+        method: 'delete',
+        url: `api/memberships/${membershipId}`
+    })
+    return res;
+}
     
