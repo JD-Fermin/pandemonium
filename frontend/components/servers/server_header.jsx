@@ -23,10 +23,8 @@ class ServerHeader extends React.Component {
     }
 
     handleLeave() {
-        console.log(this.props.memberships)
-        console.log(this.findMembership(this.props.activeServer.id, this.props.currentUser.id))
-        this.props.leave(this.findMembership(this.props.activeServer.id, this.props.currentUser.id))
-        this.props.history.push('/home')
+        this.props.leave(this.findMembership(this.props.activeServer.id, this.props.currentUser.id)).then(res => this.props.history.push('/home'))
+        
     }
 
     render() {

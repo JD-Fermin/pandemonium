@@ -27,5 +27,5 @@ export const fetchUserMemberships = (userId) => dispatch => (
 )
 
 export const deleteMembership = (membershipId) => dispatch => (
-    APIUtil.deleteMembership(membershipId).then(res => { console.log(res); dispatch(_removeMembership(res.id))})
+    APIUtil.deleteMembership(membershipId).then(res => dispatch(_removeMembership(res.id)))
 )

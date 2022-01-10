@@ -18,9 +18,9 @@ class ServerIndex extends React.Component {
         if (this.props.joinedServers[serverId] !== undefined) {
             this.props.history.push(`/servers/${serverId}`)
         } else {
-            this.props.join({ user_id: this.props.currentUserId, server_id: serverId })
+            
+            this.props.join({ user_id: this.props.currentUserId, server_id: serverId }).then(res => this.props.history.push(`/servers/${serverId}`))
             // this.props.fetchJoinedServers(this.props.currentUserId)
-            this.props.history.push(`/servers/${serverId}`)
         }
     }
 
