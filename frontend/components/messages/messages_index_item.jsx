@@ -25,7 +25,7 @@ class MessagesIndexItem extends React.Component {
     
     render(){
         if (!this.props.author) return null;
-        let modifyButtons = <><button onClick={()=>{this.toggleEdit();}}>Edit</button><button onClick={this.handleDelete}>Delete</button></>;
+        let modifyButtons = <><span onClick={()=>{this.toggleEdit();}} className="server-settings material-icons">edit</span><span onClick={this.handleDelete} className="server-settings material-icons">delete</span></>;
         let normalItem = <>
             <li onMouseEnter={this.toggleButtons} onMouseLeave={this.toggleButtons}>
                 {`${this.props.author.username}: ${this.props.message.content}`} 

@@ -86,3 +86,18 @@
     text-align: left;
     padding: 10px;
 }
+
+.user-prof {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-prof > .material-icons {
+    font-size: 32px;
+}
+
+.user-prof > h3 {
+    line-height: 100%;
+}
