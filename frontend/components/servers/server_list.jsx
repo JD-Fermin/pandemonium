@@ -62,7 +62,7 @@ class ServerList extends React.Component {
             }
             onClick={() => this.props.history.push("/discover")}
           >
-            <span class="material-icons">explore</span>
+            <span class="material-icons server-explore">explore</span>
           </li>
         </ul>
         {this.state.openForm && !this.state.editing ? (
