@@ -52,7 +52,7 @@ class ServerList extends React.Component {
                 : "server-create"
             }
           >
-            <span class="material-icons">add</span>
+            <span className="material-icons">add</span>
           </li>
           <li
             className={
@@ -62,7 +62,7 @@ class ServerList extends React.Component {
             }
             onClick={() => this.props.history.push("/discover")}
           >
-            <span class="material-icons server-explore">explore</span>
+            <span className="material-icons server-explore">explore</span>
           </li>
         </ul>
         {this.state.openForm && !this.state.editing ? (
