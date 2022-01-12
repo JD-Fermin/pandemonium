@@ -14,8 +14,7 @@ Rails.application.routes.draw do
       resources :messages, except: [:edit, :new, :show] 
     end
 
-
-
+    resources :direct_messages, only: [:index, :create, :update, :destroy]
 
     resources :memberships, only: [:create, :destroy]
   end

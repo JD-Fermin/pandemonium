@@ -1,0 +1,1 @@
+json.extract! @direct_message, :id, :content, :author_id, :receiver_id
