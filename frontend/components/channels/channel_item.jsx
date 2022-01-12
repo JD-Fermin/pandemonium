@@ -33,8 +33,8 @@ class ChannelItem extends React.Component {
         return <li onClick={this.handleChannelClick} onMouseEnter={this.toggleButtons} onMouseLeave={this.toggleButtons} className={parseInt(this.props.activeChannelId) === this.props.channel.id ? "active-channel" : ""}>
             { this.name }
             { this.state.hovered && this.props.activeServer.ownerId === this.props.currentUser.id ?  <div>
-                <button onClick={() => { this.props.toggleForm(); this.props.toggleEdit() } }>Edit</button>
-                <button onClick={this.handleDeleteClick(this.props.channel.id)}>Delete</button>
+                <span onClick={() => { this.props.toggleForm(); this.props.toggleEdit() } } className="server-settings material-icons">edit</span>
+                <span onClick={this.handleDeleteClick(this.props.channel.id)} className="server-settings material-icons">delete</span>
             </div> :  null }
 
         </li>

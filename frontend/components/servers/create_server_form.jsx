@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
 import { createServer } from "../../actions/server_actions";
 
 class CreateServerForm extends React.Component {
@@ -16,7 +17,7 @@ class CreateServerForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.create(this.state)
+        this.props.create(this.state).then(res => this.props.history.push(`/servers/${res.payload.id}`))
         this.setState({ name: '', description: '' })
         this.props.toggleForm()
     }
@@ -53,4 +54,4 @@ const mDTP = (dispatch) => ({
     create: (server) => dispatch(createServer(server))
 })
 
-export default connect(mSTP, mDTP)(CreateServerForm)
+export default withRouter(connect(mSTP, mDTP)(CreateServerForm))
