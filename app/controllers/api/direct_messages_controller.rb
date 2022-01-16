@@ -1,12 +1,9 @@
 class Api::DirectMessagesController < ApplicationController
     skip_before_action :verify_authenticity_token
+    before_action :get_convo
     def index
-        @direct_messages = DirectMessage.where(
-            "(receiver_id = #{params[:receiver_id]} OR receiver_id = #{params[:author_id]}) 
-            AND 
-            (author_id = #{params[:author_id]} OR author_id = #{params[:receiver_id]})"
-        )
-        render :index
+       @direct_messages = @conversation.direct_messages
+       render :index
     end
 
     def show
@@ -19,15 +16,11 @@ class Api::DirectMessagesController < ApplicationController
     end
 
     def create
-        if User.find_by(id: params[:direct_message][:receiver_id])
-            @direct_message = DirectMessage.new(dm_params)
-            if @direct_message.save
-                render :show
-            else
-                render @direct_message.errors.full_messages, status: 400
-            end
+        @direct_message = DirectMessage.new(dm_params)
+        if @direct_message.save
+            render :show
         else
-            render json: ["User does not exist"], status: 400
+            render @direct_message.errors.full_messages, status: 400
         end
     end
 
@@ -57,4 +50,9 @@ class Api::DirectMessagesController < ApplicationController
     def update_params
         params.require(:direct_message).permit(:content)
     end
+
+    def get_convo
+        @conversation = Conversation.find_by(id: params[:conversation_id])
+    end
+    
 end
