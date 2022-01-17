@@ -14,10 +14,10 @@ Rails.application.routes.draw do
       resources :messages, except: [:edit, :new, :show] 
     end
 
-    resources :conversations, except: [:edit, :new] do
+    resources :conversations, except: [:edit, :new, :update] do
       resources :direct_messages, only: [:index, :create, :update, :destroy]
     end
-    
+
     resources :memberships, only: [:create, :destroy]
   end
   root to: "static_pages#root"
