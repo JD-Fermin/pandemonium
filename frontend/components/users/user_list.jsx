@@ -26,15 +26,6 @@ class UserList extends React.Component {
           {this.props.users.map((user) => (
             <li
               key={this.props.activeServer.id + user.username}
-              onClick={() => {
-                  this.props.createDM({name: `${user.username}`, owner_id: this.props.currentUser.id, isPrivate: true })
-                    .then(
-                        async res => {
-                            await this.props.createMembership({user_id: user.id, server_id: res.payload.id});
-                            await this.props.history.push(`/servers/${res.payload.id}`)
-                        }
-                    )
-              }}
             >
               {this.props.activeServer &&
               user.id === this.props.activeServer.ownerId ? (
@@ -63,8 +54,6 @@ const mSTP = (state) => ({
 
 const mDTP = (dispatch) => ({
   fetchUsers: (id) => dispatch(fetchUsers(id)),
-  createDM: (server) => dispatch(createServer(server)),
-  createMembership: (membership) => dispatch(createMembership(membership))
 });
 
 export default withRouter(connect(mSTP, mDTP)(UserList));

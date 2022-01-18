@@ -73,7 +73,7 @@
 }
 
 .server-explore {
-   transform: scale(2);
+   transform: scale(1.5);
 }
 
 .server.title.header {
@@ -121,4 +121,25 @@
     transition: 0.2s;
     background-color: #40916C;
 }
+
+.server-settings + .leave-word {
+    display: none 
+}
+
+.server-settings:hover + .leave-word {
+    display: block;
+    font-size: 18px;
+    color: #D8F3DC;
+    background: #2D6A4F;
+    position: absolute;
+    transform: translate(475%, 10%);
+    padding: 2px;
+    border-radius: 4px ;
+    font-family: 'VT323', monospace;
+}
+
+.server-settings:hover + .leave-word.logout {
+    transform: translate(375%, 10%);
+}
+
 
