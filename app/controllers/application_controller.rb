@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   helper_method :current_user, :logged_in?
+  protect_from_forgery with: :exception
 
   def login!(user)
     # set the session_token for the connection to be the 

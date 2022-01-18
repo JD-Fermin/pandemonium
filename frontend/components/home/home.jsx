@@ -57,6 +57,9 @@ class Home extends React.Component {
             >
               logout
             </span>
+            <div className="leave-word logout">
+              Logout
+            </div>
           </div>
         </div>
         <div className="home-content">

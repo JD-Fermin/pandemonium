@@ -70,12 +70,18 @@ class ServerHeader extends React.Component {
         ) : null}
         {this.props.activeServer &&
         this.props.currentUser.id !== this.props.activeServer.ownerId ? (
+          <>
           <span
             onClick={this.handleLeave}
             className="server-settings material-icons"
           >
             exit_to_app
           </span>
+          <div className="leave-word">
+            Leave
+          </div>
+          </>
+          
         ) : null}
         {this.state.openForm ? (
           <div className="create-channel-container">

@@ -16,6 +16,11 @@ class User < ApplicationRecord
 
   has_many :joined_servers, through: :memberships, source: :server
 
+  has_many :direct_messages, class_name: :DirectMessage, foreign_key: :user_id
+  has_many :user_conversations, class_name: :UserConversation, foreign_key: :user_id
+
+  has_many :conversations, through: :user_conversations, source: :conversation
+
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     if user && user.is_valid_password?(password)
