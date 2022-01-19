@@ -71,12 +71,16 @@ a {
 .reference-links {
     padding-top: 20px;
     font-family: 'VT323', monospace;
+    cursor: pointer;
     font-size: 24px;
     font-weight: normal;
     letter-spacing: 0px;
     text-align: center;
 }
 
+.reference-links >li {
+    color: blue;
+}
 .sessionForm {
     width: 600px;
     margin: 0 auto;

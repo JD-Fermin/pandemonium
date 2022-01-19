@@ -17,7 +17,9 @@ class Splash extends React.Component {
                     </ul>
                     
                     <ul className="reference-links"> You can find me in:
-                        <li><a href="https://github.com/JD-Fermin/pandemonium">Github</a></li>
+                        <li onClick={() => window.open('https://github.com/JD-Fermin/pandemonium')}>Github</li>
+                        <li onClick={() => window.open('https://angel.co/u/jan-daniel-fermin')}>AngelList</li>
+                        <li onClick={() => window.open('https://www.linkedin.com/in/jan-daniel-fermin-923418228/')}>LinkedIn</li>
                     </ul>
                 </div>
             </div>
