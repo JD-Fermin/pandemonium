@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { createServer } from "../../actions/server_actions";
 import { createMembership } from "../../actions/membership_actions";
+import { createConversation } from "../../actions/conversation_actions";
 class UserList extends React.Component {
   componentDidMount() {
     this.props.match.params.serverId
@@ -17,6 +18,8 @@ class UserList extends React.Component {
     }
   }
 
+
+
   render() {
     if (!this.props.activeServer) return null;
     return (
@@ -26,6 +29,7 @@ class UserList extends React.Component {
           {this.props.users.map((user) => (
             <li
               key={this.props.activeServer.id + user.username}
+              onClick={() => this.props.createConvo({ user_id: user.id })}
             >
               {this.props.activeServer &&
               user.id === this.props.activeServer.ownerId ? (
@@ -54,6 +58,7 @@ const mSTP = (state) => ({
 
 const mDTP = (dispatch) => ({
   fetchUsers: (id) => dispatch(fetchUsers(id)),
+  createConvo: (convo) => dispatch(createConversation(convo))
 });
 
 export default withRouter(connect(mSTP, mDTP)(UserList));

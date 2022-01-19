@@ -37,6 +37,15 @@ class ServerList extends React.Component {
     return (
       <div className="server-bar">
         <ul className="server-list">
+          <li className={
+              this.props.match.path.includes("/conversations")
+                ? "server-create active-server"
+                : "server-create"
+            }
+            onClick={() => this.props.history.push("/conversations")}
+            >
+            <span className="material-icons">chat</span>
+          </li>
           {this.props.servers.map((server) => (
             <ServerListItem
               key={server.id + server.name}

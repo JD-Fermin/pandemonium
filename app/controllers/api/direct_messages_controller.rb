@@ -44,7 +44,7 @@ class Api::DirectMessagesController < ApplicationController
     
     private 
     def dm_params
-        params.require(:direct_message).permit(:content, :author_id, :receiver_id)
+        params.require(:direct_message).permit(:content, :user_id, :conversation_id)
     end
 
     def update_params
