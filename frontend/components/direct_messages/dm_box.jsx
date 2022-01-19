@@ -1,5 +1,9 @@
 import React from "react";
-import DirectMessageFormContainer from "./direct_message_form"
+import DirectMessagesIndexContainer from "./direct_messages_index";
+import DirectMessageFormContainer from "./direct_message_form";
+import ServerList from "../servers/server_list";
+import ConversationIndexContainer from './conversation_index'
+import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
 class DmBox extends React.Component {
   constructor(props) {
     super(props);
@@ -7,10 +11,18 @@ class DmBox extends React.Component {
 
   render() {
     return (
-        <div>
+      <div>
+        <ServerList />
+        <ConversationIndexContainer />
+        {this.props.match.params.conversationId ? (
+          <>
+            <DirectMessagesIndexContainer />
             <DirectMessageFormContainer />
-        </div>
-    )
+          </>
+        ) : null}
+      </div>
+    );
   }
 }
-export default DmBox;
+
+export default withRouter(DmBox);

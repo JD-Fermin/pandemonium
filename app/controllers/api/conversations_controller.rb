@@ -1,6 +1,6 @@
 class Api::ConversationsController < ApplicationController
     def index
-        @conversartions = current_user.conversations
+        @conversations = current_user.conversations
         render :index
     end
 
