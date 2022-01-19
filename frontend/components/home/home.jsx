@@ -7,6 +7,7 @@ import ServerHeaderContainer from "../servers/server_header";
 import UserList from "../users/user_list";
 import ServerIndex from "./../servers/server_index";
 import { withRouter } from "react-router";
+import UserBarContainer from '../users/user_bar'
 class Home extends React.Component {
   componentDidMount() {
     {
@@ -45,22 +46,7 @@ class Home extends React.Component {
             activeServer={this.props.activeServer}
             currentUser={this.props.currentUser}
           />
-          <div className="user-ops">
-            <div className="user-prof">
-              <span className="material-icons">account_circle</span>
-              <h3>{this.props.currentUser.username}</h3>
-            </div>
-
-            <span
-              className="server-settings material-icons"
-              onClick={this.props.logout}
-            >
-              logout
-            </span>
-            <div className="leave-word logout">
-              Logout
-            </div>
-          </div>
+          <UserBarContainer />
         </div>
         <div className="home-content">
           <nav>

@@ -2,8 +2,9 @@ import React from "react";
 import DirectMessagesIndexContainer from "./direct_messages_index";
 import DirectMessageFormContainer from "./direct_message_form";
 import ServerList from "../servers/server_list";
-import ConversationIndexContainer from './conversation_index'
+import ConversationIndexContainer from "./conversation_index";
 import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
+import UserBarContainer from "../users/user_bar"
 class DmBox extends React.Component {
   constructor(props) {
     super(props);
@@ -11,14 +12,18 @@ class DmBox extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="home">
         <ServerList />
-        <ConversationIndexContainer />
+        <div className="channel-bar">
+          <ConversationIndexContainer />
+          <UserBarContainer />
+        </div>
+
         {this.props.match.params.conversationId ? (
-          <>
+          <div className="chatbox">
             <DirectMessagesIndexContainer />
             <DirectMessageFormContainer />
-          </>
+          </div>
         ) : null}
       </div>
     );

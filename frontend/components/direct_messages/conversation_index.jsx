@@ -15,7 +15,7 @@ class ConversationIndex extends React.Component {
     render() {
         if (!this.props.conversations) return null;
         return (
-            <ul>
+            <ul className="channel-list">
                 {
                     Object.values(this.props.conversations).map( (conversation) => {
                         return (

@@ -29,7 +29,10 @@ class UserList extends React.Component {
           {this.props.users.map((user) => (
             <li
               key={this.props.activeServer.id + user.username}
-              onClick={() => this.props.createConvo({ user_id: user.id })}
+              onClick={() => {  
+                this.props.createConvo({ user_id: user.id })
+                  .then(res => this.props.history.push(`/conversations/${res.payload.id}`))
+              }}
             >
               {this.props.activeServer &&
               user.id === this.props.activeServer.ownerId ? (
