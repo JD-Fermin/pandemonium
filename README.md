@@ -10,13 +10,16 @@ Pandemonium is a messaging app where users with similar interests can talk withi
 - Users can join servers or create one of their own. 
 - Server owners can update the name of their servers.
 - Server owners can also delete their server.
+![alt text](https://github.com/JD-Fermin/pandemonium/blob/main/screenshots/explore.png)
+![alt text](https://github.com/JD-Fermin/pandemonium/blob/main/screenshots/server.png)
 ## Channels
 - Server owners can edit, add and delete channels within their own servers.
 - Members can freely switch between channels within server.
+![alt text](https://github.com/JD-Fermin/pandemonium/blob/main/screenshots/channel.png)
 ## Live Chat
 - Messaging within channels is mostly live (still needs page refresh if a just registered user joins)
 - Existing users can edit and delete their messages live.
-
+![alt text](https://github.com/JD-Fermin/pandemonium/blob/main/screenshots/message.png)
 ## Technologies Used
 - Ruby 2.7.2
 - Rails 5.2.6
