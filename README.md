@@ -8,9 +8,9 @@ Pandemonium is a messaging app where users with similar interests can talk withi
 
 ## Servers
 - Users can join servers or create one of their own. 
+![alt text](https://github.com/JD-Fermin/pandemonium/blob/main/screenshots/explore.png)
 - Server owners can update the name of their servers.
 - Server owners can also delete their server.
-![alt text](https://github.com/JD-Fermin/pandemonium/blob/main/screenshots/explore.png)
 ![alt text](https://github.com/JD-Fermin/pandemonium/blob/main/screenshots/server.png)
 ## Channels
 - Server owners can edit, add and delete channels within their own servers.
